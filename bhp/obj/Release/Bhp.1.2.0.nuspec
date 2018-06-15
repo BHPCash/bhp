@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>Bhp</id>
+    <version>1.2.0</version>
+    <authors>The Bhp Project</authors>
+    <owners>The Bhp Project</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Bhp</description>
+    <copyright>2018 The Bhp Project</copyright>
+    <tags>BHP Blockchain Smart Contract</tags>
+    <dependencies>
+      <group targetFramework=".NETFramework4.7">
+        <dependency id="Bhp.VM" version="2.2.1" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.AspNetCore.ResponseCompression" version="2.0.2" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.AspNetCore.Server.Kestrel" version="2.0.2" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.AspNetCore.Server.Kestrel.Https" version="2.0.2" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.AspNetCore.WebSockets" version="2.0.2" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.EntityFrameworkCore.Sqlite" version="2.0.2" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Extensions.Configuration.Json" version="2.0.1" exclude="Build,Analyzers" />
+        <dependency id="Replicon.Cryptography.SCrypt" version="1.1.6.13" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework=".NETStandard2.0">
+        <dependency id="Bhp.VM" version="2.2.1" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.AspNetCore.ResponseCompression" version="2.0.2" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.AspNetCore.Server.Kestrel" version="2.0.2" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.AspNetCore.Server.Kestrel.Https" version="2.0.2" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.AspNetCore.WebSockets" version="2.0.2" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.EntityFrameworkCore.Sqlite" version="2.0.2" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Extensions.Configuration.Json" version="2.0.1" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+    <frameworkAssemblies>
+      <frameworkAssembly assemblyName="System.Security" targetFramework=".NETFramework4.7" />
+    </frameworkAssemblies>
+  </metadata>
+  <files>
+    <file src="D:\BHP\bhp\bhp\bin\Release\net47\Bhp.dll" target="lib\net47\Bhp.dll" />
+    <file src="D:\BHP\bhp\bhp\bin\Release\netstandard2.0\Bhp.dll" target="lib\netstandard2.0\Bhp.dll" />
+    <file src="D:\BHP\bhp\bhp\protocol.json" target="content\protocol.json" />
+  </files>
+</package>

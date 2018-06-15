@@ -1,0 +1,30 @@
+﻿{
+  "ProtocolConfiguration": {
+    "Magic": 8928791,
+    "AddressVersion": 23,
+    "MaxTransactionsPerBlock": 500,
+    "SecondsPerBlock": 15,
+    "StandbyValidators": [
+      "xxx",
+      "xxx",
+      "xxx",
+      "xxx",
+      "xxx",
+      "xxx",
+      "xxx"
+    ],
+    "SeedList": [
+      "seed1.bhpcash.io:30556",
+      "seed2.bhpcash.io:30556",
+      "seed3.bhpcash.io:30556",
+      "seed4.bhpcash.io:30556",
+      "seed5.bhpcash.io:30556"
+    ],
+    "SystemFee": {
+      "EnrollmentTransaction": 1000,
+      "IssueTransaction": 500,
+      "PublishTransaction": 500,
+      "RegisterTransaction": 10000
+    }
+  }
+}

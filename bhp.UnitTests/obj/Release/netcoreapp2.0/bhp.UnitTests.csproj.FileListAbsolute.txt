@@ -1,0 +1,17 @@
+D:\BHP\bhp\bhp.UnitTests\bin\Release\netcoreapp2.0\protocol.json
+D:\BHP\bhp\bhp.UnitTests\bin\Release\netcoreapp2.0\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+D:\BHP\bhp\bhp.UnitTests\bin\Release\netcoreapp2.0\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+D:\BHP\bhp\bhp.UnitTests\bin\Release\netcoreapp2.0\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+D:\BHP\bhp\bhp.UnitTests\bin\Release\netcoreapp2.0\Bhp.UnitTests.deps.json
+D:\BHP\bhp\bhp.UnitTests\bin\Release\netcoreapp2.0\Bhp.UnitTests.runtimeconfig.json
+D:\BHP\bhp\bhp.UnitTests\bin\Release\netcoreapp2.0\Bhp.UnitTests.runtimeconfig.dev.json
+D:\BHP\bhp\bhp.UnitTests\bin\Release\netcoreapp2.0\Bhp.UnitTests.dll
+D:\BHP\bhp\bhp.UnitTests\bin\Release\netcoreapp2.0\Bhp.UnitTests.pdb
+D:\BHP\bhp\bhp.UnitTests\bin\Release\netcoreapp2.0\Bhp.dll
+D:\BHP\bhp\bhp.UnitTests\obj\Release\netcoreapp2.0\bhp.UnitTests.csproj.CoreCompileInputs.cache
+D:\BHP\bhp\bhp.UnitTests\obj\Release\netcoreapp2.0\bhp.UnitTests.AssemblyInfoInputs.cache
+D:\BHP\bhp\bhp.UnitTests\obj\Release\netcoreapp2.0\bhp.UnitTests.AssemblyInfo.cs
+D:\BHP\bhp\bhp.UnitTests\obj\Release\netcoreapp2.0\bhp.UnitTests.csproj.CopyComplete
+D:\BHP\bhp\bhp.UnitTests\obj\Release\netcoreapp2.0\Bhp.UnitTests.dll
+D:\BHP\bhp\bhp.UnitTests\obj\Release\netcoreapp2.0\Bhp.UnitTests.pdb
+D:\BHP\bhp\bhp.UnitTests\obj\Release\netcoreapp2.0\bhp.UnitTests.csprojAssemblyReference.cache

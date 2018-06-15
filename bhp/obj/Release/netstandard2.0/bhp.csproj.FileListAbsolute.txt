@@ -1,0 +1,10 @@
+D:\BHP\bhp\bhp\bin\Release\netstandard2.0\protocol.json
+D:\BHP\bhp\bhp\bin\Release\netstandard2.0\Bhp.deps.json
+D:\BHP\bhp\bhp\bin\Release\netstandard2.0\Bhp.dll
+D:\BHP\bhp\bhp\obj\Release\netstandard2.0\Bhp.Properties.Resources.resources
+D:\BHP\bhp\bhp\obj\Release\netstandard2.0\bhp.csproj.GenerateResource.cache
+D:\BHP\bhp\bhp\obj\Release\netstandard2.0\bhp.csproj.CoreCompileInputs.cache
+D:\BHP\bhp\bhp\obj\Release\netstandard2.0\bhp.AssemblyInfoInputs.cache
+D:\BHP\bhp\bhp\obj\Release\netstandard2.0\bhp.AssemblyInfo.cs
+D:\BHP\bhp\bhp\obj\Release\netstandard2.0\Bhp.dll
+D:\BHP\bhp\bhp\obj\Release\netstandard2.0\bhp.csprojAssemblyReference.cache
