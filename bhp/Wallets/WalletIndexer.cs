@@ -11,8 +11,14 @@ using System.Threading;
 
 namespace Bhp.Wallets
 {
+    /// <summary>
+    /// 钱包与区块链数据同步
+    /// </summary>
     public static class WalletIndexer
     {
+        /// <summary>
+        /// 钱包余额发生变化
+        /// </summary>
         public static event EventHandler<BalanceEventArgs> BalanceChanged;
 
         private static readonly Dictionary<uint, HashSet<UInt160>> indexes = new Dictionary<uint, HashSet<UInt160>>();
@@ -34,12 +40,17 @@ namespace Bhp.Wallets
             }
         }
 
+        /// <summary>
+        /// 钱包初始化工具
+        /// </summary>
         static WalletIndexer()
         {
             string path = Path.GetFullPath($"Index_{Settings.Default.Magic:X8}");
             Directory.CreateDirectory(path);
             db = DB.Open(path, new Options { CreateIfMissing = true });
-            if (db.TryGet(ReadOptions.Default, SliceBuilder.Begin(DataEntryPrefix.SYS_Version), out Slice value) && Version.TryParse(value.ToString(), out Version version) && version >= Version.Parse("2.5.4"))
+            if (db.TryGet(ReadOptions.Default, 
+                SliceBuilder.Begin(DataEntryPrefix.SYS_Version), out Slice value)
+                && Version.TryParse(value.ToString(), out Version version) && version >= Version.Parse(BhpSysConsts.Version))
             {
                 ReadOptions options = new ReadOptions { FillCache = false };
                 foreach (var group in db.Find(options, SliceBuilder.Begin(DataEntryPrefix.IX_Group), (k, v) => new

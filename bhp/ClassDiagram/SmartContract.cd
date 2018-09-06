@@ -1,0 +1,223 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Comment CommentText="SmartContract">
+    <Position X="28.508" Y="0.812" Height="0.406" Width="1.273" />
+  </Comment>
+  <Class Name="Bhp.SmartContract.Enumerators.ArrayWrapper">
+    <Position X="3.25" Y="2" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>AwAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>SmartContract\Enumerators\ArrayWrapper.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Object" Collapsed="true">
+    <Position X="30" Y="0.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Bhp.SmartContract.Enumerators.ConcatenatedEnumerator">
+    <Position X="13" Y="2" Width="4.75" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAACAAAAAAAgEAAAAAgAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>SmartContract\Enumerators\ConcatenatedEnumerator.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Bhp.SmartContract.Enumerators.IteratorKeysWrapper">
+    <Position X="45.75" Y="2" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAACAgAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>SmartContract\Enumerators\IteratorKeysWrapper.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Bhp.SmartContract.Enumerators.IteratorValuesWrapper">
+    <Position X="55.25" Y="2" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAACAgAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>SmartContract\Enumerators\IteratorValuesWrapper.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Bhp.SmartContract.Iterators.MapWrapper">
+    <Position X="28.75" Y="2" Width="5" />
+    <TypeIdentifier>
+      <HashCode>AwAAAAAAACAAAAQAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>SmartContract\Iterators\MapWrapper.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Bhp.SmartContract.Iterators.StorageIterator">
+    <Position X="34.5" Y="2" Width="6" />
+    <TypeIdentifier>
+      <HashCode>AwAAAAAAACAAAAQAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>SmartContract\Iterators\StorageIterator.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Bhp.SmartContract.ApplicationEngine">
+    <Position X="16" Y="20" Width="9.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAUYAABAZwClAAABAAAAAAgAAAAAAAoAAAMQAM=</HashCode>
+      <FileName>SmartContract\ApplicationEngine.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bhp.VM.ExecutionEngine">
+    <Position X="16.5" Y="14.75" Width="8.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Bhp.SmartContract.CachedScriptTable">
+    <Position X="7.5" Y="2" Width="4.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAQAAAAAAAAAAAAAAACAA=</HashCode>
+      <FileName>SmartContract\CachedScriptTable.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Bhp.SmartContract.Contract">
+    <Position X="22" Y="2" Width="5.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAAJAAQAAAAACABAAAAEACAAAAAEAgYAA=</HashCode>
+      <FileName>SmartContract\Contract.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bhp.Implementations.Wallets.BHP6.BHP6Contract">
+    <Position X="21.25" Y="6.5" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAQAAAAAAAAAAAACAIAAAAAIAAAA=</HashCode>
+      <FileName>Implementations\Wallets\BHP6\BHP6Contract.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bhp.Implementations.Wallets.EntityFramework.VerificationContract">
+    <Position X="25" Y="6.5" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAgAAAAAAAACBAAIAAAAAAAAAAAAA=</HashCode>
+      <FileName>Implementations\Wallets\EntityFramework\VerificationContract.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Bhp.SmartContract.ContractParameter">
+    <Position X="41.25" Y="2" Width="3.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAEAQAAAAAAAAAAAAAAIQAgAAAAAAA=</HashCode>
+      <FileName>SmartContract\ContractParameter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bhp.SmartContract.ContractParametersContext">
+    <Position X="49.5" Y="2" Width="5" />
+    <NestedTypes>
+      <Class Name="Bhp.SmartContract.ContractParametersContext.ContextItem" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>SmartContract\ContractParametersContext.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAJwAAAAgAAAQAIEAQAIAAAAAAIAAAAEIAAAgAAEAAA=</HashCode>
+      <FileName>SmartContract\ContractParametersContext.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bhp.SmartContract.LogEventArgs">
+    <Position X="4" Y="11" Width="5.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgAAAAAAAAAAAAAAABAAAAAAAAAAAIAAAAAA=</HashCode>
+      <FileName>SmartContract\LogEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.EventArgs" Collapsed="true">
+    <Position X="10.5" Y="9.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Bhp.Wallets.BalanceEventArgs" Collapsed="true">
+    <Position X="1.5" Y="11" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAABAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAQA=</HashCode>
+      <FileName>Wallets\BalanceEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bhp.Implementations.Blockchains.LevelDB.ApplicationExecutedEventArgs">
+    <Position X="10.25" Y="11" Width="4.25" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Implementations\Blockchains\LevelDB\ApplicationExecutedEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bhp.SmartContract.NotifyEventArgs">
+    <Position X="15.25" Y="11" Width="5.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgAAAAAAAAAAAAAAABAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>SmartContract\NotifyEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bhp.SmartContract.StateMachine">
+    <Position X="4.25" Y="34.5" Width="14.25" />
+    <TypeIdentifier>
+      <HashCode>IAAAAGIAAABAAAAAAEAAwAEAAYgAACGAAAAoAAIAiAA=</HashCode>
+      <FileName>SmartContract\StateMachine.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bhp.SmartContract.StateReader">
+    <Position X="8.25" Y="15.75" Width="6.5" />
+    <TypeIdentifier>
+      <HashCode>YtIEkmQqhSipfAmAqJECAggIEFyglAXAAADogDKQigA=</HashCode>
+      <FileName>SmartContract\StateReader.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Bhp.VM.InteropService">
+    <Position X="9.75" Y="13.75" Width="3.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Bhp.SmartContract.StorageContext">
+    <Position X="18.5" Y="2" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAQAAAAAAAABAAAAAAAAAAAAABAAAA=</HashCode>
+      <FileName>SmartContract\StorageContext.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="Bhp.SmartContract.Enumerators.IEnumerator">
+    <Position X="0.75" Y="14.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>SmartContract\Enumerators\IEnumerator.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="System.IDisposable">
+    <Position X="0.75" Y="12.75" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="Bhp.VM.IInteropInterface">
+    <Position X="21.75" Y="13" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="Bhp.SmartContract.Iterators.IIterator">
+    <Position X="0.75" Y="16.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SmartContract\Iterators\IIterator.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="Bhp.SmartContract.ContractParameterType">
+    <Position X="59.25" Y="0.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAACAAQQAAAAAQAAAAAAgSAAAAAQAACAAE=</HashCode>
+      <FileName>SmartContract\ContractParameterType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Bhp.SmartContract.StackItemType">
+    <Position X="61.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAARAACAAwAAAAAAAAAAAAAgQAAAAAAAAAAAA=</HashCode>
+      <FileName>SmartContract\StackItemType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Bhp.SmartContract.TriggerType">
+    <Position X="61.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>SmartContract\TriggerType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Microsoft YaHei UI" Size="9" />
+</ClassDiagram>

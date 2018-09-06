@@ -1,0 +1,275 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Comment CommentText="Core">
+    <Position X="71.3" Y="0.599" Height="0.284" Width="0.815" />
+  </Comment>
+  <Class Name="Bhp.Core.AccountState">
+    <Position X="5" Y="4.75" Width="4.75" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAEAAAAAgAAAAAAAAAAABCBAQAIAIAAAAAAIAAQ=</HashCode>
+      <FileName>Core\AccountState.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Bhp.Core.AssetState">
+    <Position X="10.5" Y="4.75" Width="4.5" />
+    <TypeIdentifier>
+      <HashCode>AIEAIQCCACAAwAAkAAAAAQTAAiBAQEAIIAAAAAAAFAA=</HashCode>
+      <FileName>Core\AssetState.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Bhp.Core.StateBase">
+    <Position X="26.25" Y="1.75" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAAAACBAAAAAIAAAAAAAAAg=</HashCode>
+      <FileName>Core\StateBase.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Bhp.Core.ContractState">
+    <Position X="15.75" Y="4.75" Width="4.75" />
+    <TypeIdentifier>
+      <HashCode>BIAAAAAAACBggAgAgAAAAASABChAAAAAIAAAAAgkQAA=</HashCode>
+      <FileName>Core\ContractState.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Bhp.Core.SpentCoinState">
+    <Position X="21.25" Y="4.75" Width="5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAiAgABAAAAAAAACBAAAgAAAAAAAAAAAA=</HashCode>
+      <FileName>Core\SpentCoinState.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Bhp.Core.StorageItem">
+    <Position X="27" Y="4.75" Width="4.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAAQACBACAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Core\StorageItem.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Bhp.Core.UnspentCoinState">
+    <Position X="32.5" Y="4.75" Width="5.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIAiAAAAAAAAAAAACBAAACAAAAAAAAAAAA=</HashCode>
+      <FileName>Core\UnspentCoinState.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Bhp.Core.ValidatorsCountState">
+    <Position X="38.75" Y="4.75" Width="5.75" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAQAAgAAAAAAAAAAAACBAAAAAAAAAAAACAAA=</HashCode>
+      <FileName>Core\ValidatorsCountState.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Bhp.Core.ValidatorState">
+    <Position X="45.25" Y="4.75" Width="5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAEAAAgAAAEAAAAAQAICBAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Core\ValidatorState.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Bhp.Core.Block">
+    <Position X="65.25" Y="7.75" Width="6" />
+    <TypeIdentifier>
+      <HashCode>BAigAAAAAAAAgUAAgAAAAAAAACBAAIAAIAAAAIAAAAg=</HashCode>
+      <FileName>Core\Block.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Bhp.Core.BlockBase">
+    <Position X="70.75" Y="1.75" Width="4.25" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAABA4IoQAACAACAAAAACBAAEBAIAEAEAAwAAA=</HashCode>
+      <FileName>Core\BlockBase.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Bhp.Core.Header">
+    <Position X="72" Y="7.75" Width="3.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAgAAAAAAAACBAAIAAAAAAAIAAAAA=</HashCode>
+      <FileName>Core\Header.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Bhp.Network.Payloads.MerkleBlockPayload">
+    <Position X="76.5" Y="7.75" Width="4" />
+    <TypeIdentifier>
+      <HashCode>AABABAAAAAAAgAAAAAAAAABAACBAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Network\Payloads\MerkleBlockPayload.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bhp.Core.Blockchain">
+    <Position X="85.75" Y="1.75" Width="14" />
+    <TypeIdentifier>
+      <HashCode>DQABIFgBZCAQAGcBAMAIIBADQIkEEAAAAEYgBAjBIAQ=</HashCode>
+      <FileName>Core\Blockchain.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Object" Collapsed="true">
+    <Position X="72.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Bhp.Core.CoinReference">
+    <Position X="81.25" Y="1.75" Width="3.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAiAAMAAAAAAAAAIAAIAAAAAAAIAA=</HashCode>
+      <FileName>Core\CoinReference.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Bhp.Core.ContractTransaction">
+    <Position X="114" Y="10.75" Width="3.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAA=</HashCode>
+      <FileName>Core\ContractTransaction.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bhp.Core.Transaction">
+    <Position X="119" Y="1.75" Width="5.5" />
+    <TypeIdentifier>
+      <HashCode>JAgACIEABCcIgQIAgAAIAAAQEgAQAIhAIQAABIIQIQA=</HashCode>
+      <FileName>Core\Transaction.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Bhp.Core.ClaimTransaction">
+    <Position X="100.5" Y="10.75" Width="3.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAEAgQIAAAAAAAAAAAAAAAAAIAAAAIIAAAA=</HashCode>
+      <FileName>Core\ClaimTransaction.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bhp.Core.EnrollmentTransaction">
+    <Position X="105" Y="10.75" Width="3.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAEAgQIAAAAAAAQABAAAAAAQIAAAAIAAAAA=</HashCode>
+      <FileName>Core\EnrollmentTransaction.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bhp.Core.InvocationTransaction">
+    <Position X="109.5" Y="10.75" Width="3.75" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAQAEAgQAAAAAAAAAAAAAAAAAAIAAAAIAgAQA=</HashCode>
+      <FileName>Core\InvocationTransaction.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bhp.Core.IssueTransaction">
+    <Position X="118.5" Y="10.75" Width="3.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQIAAAAAAAAAAAAAAAAAAAAAAIAAAQA=</HashCode>
+      <FileName>Core\IssueTransaction.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bhp.Core.MinerTransaction">
+    <Position X="123" Y="10.75" Width="3.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAEAgAAAAAAAAAAAAAAAAAAAIAAAAIIACAA=</HashCode>
+      <FileName>Core\MinerTransaction.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bhp.Core.PublishTransaction">
+    <Position X="127.5" Y="10.75" Width="3.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACEggQAIgAAAAASABAAAAAAAIAAAAIgkQAA=</HashCode>
+      <FileName>Core\PublishTransaction.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bhp.Core.RegisterTransaction">
+    <Position X="132" Y="10.75" Width="3.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAGAAAEAwQIAAAAAAQSAAAAAAAAAIAAAAIAAEQA=</HashCode>
+      <FileName>Core\RegisterTransaction.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bhp.Core.StateTransaction">
+    <Position X="136.5" Y="10.75" Width="6.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAEAgwIAAAAAAAQAAAAgAAAAIAAAAIAAAQA=</HashCode>
+      <FileName>Core\StateTransaction.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bhp.Core.Witness">
+    <Position X="55.5" Y="1.75" Width="3.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAIEAAAIAAAABAAAAAAAIAAAAAAAYAA=</HashCode>
+      <FileName>Core\Witness.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Bhp.Core.StorageKey">
+    <Position X="51" Y="1.75" Width="3.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAgAAIAAAABIAAAIAAAAAAAAAAIAA=</HashCode>
+      <FileName>Core\StorageKey.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Bhp.Network.Payloads.VersionPayload">
+    <Position X="60" Y="1.75" Width="4.5" />
+    <TypeIdentifier>
+      <HashCode>oAAAAAAAAAAQoAAAAAAKAAAACAAAAEAAAgAAAAAAKAA=</HashCode>
+      <FileName>Network\Payloads\VersionPayload.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Bhp.Implementations.Blockchains.LevelDB.LevelDBBlockchain">
+    <Position X="90" Y="15.75" Width="5.5" />
+    <TypeIdentifier>
+      <HashCode>DQIBAEggbCAQAChBAkBAABIBAB0hAAgAAEQABAgEIBQ=</HashCode>
+      <FileName>Implementations\Blockchains\LevelDB\LevelDBBlockchain.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bhp.Core.SpentCoin">
+    <Position X="143.5" Y="1.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAgAgAAAACAA=</HashCode>
+      <FileName>Core\SpentCoin.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bhp.Core.StateDescriptor">
+    <Position X="0.5" Y="1.75" Width="3.75" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAgQQAAAAIAAAAQAAABAAiIQAgAAAAoQA=</HashCode>
+      <FileName>Core\StateDescriptor.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Enum Name="Bhp.Core.StateType">
+    <Position X="148.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAEA=</HashCode>
+      <FileName>Core\StateType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Bhp.Core.ContractPropertyState">
+    <Position X="146.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BIAAAAAAAABAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Core\ContractPropertyState.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Bhp.Core.CoinState">
+    <Position X="148.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIABAAAAAAAAAAAAAAAAAAAAAAACAAgAAAgAAA=</HashCode>
+      <FileName>Core\CoinState.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Bhp.Core.AssetType">
+    <Position X="146.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAAAAAAAAAAAAAAAAADAgAAAAAAEAAAAgBAQA=</HashCode>
+      <FileName>Core\AssetType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Microsoft YaHei UI" Size="9" />
+</ClassDiagram>

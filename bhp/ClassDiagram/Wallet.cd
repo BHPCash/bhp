@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="Bhp.Wallets.AssetDescriptor">
+    <Position X="1.75" Y="1.75" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAgAAEAAAgAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Wallets\AssetDescriptor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bhp.Wallets.BalanceEventArgs">
+    <Position X="0.75" Y="22.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAABAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAQA=</HashCode>
+      <FileName>Wallets\BalanceEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bhp.Wallets.Coin">
+    <Position X="5.25" Y="1.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAAAAgAAIAAAAAAAAAIACAAAABEAAAAA=</HashCode>
+      <FileName>Wallets\Coin.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Object" Collapsed="true">
+    <Position X="20.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.EventArgs">
+    <Position X="9.75" Y="20.5" Width="1.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Bhp.Implementations.Blockchains.LevelDB.ApplicationExecutedEventArgs">
+    <Position X="3.75" Y="22.75" Width="4.25" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Implementations\Blockchains\LevelDB\ApplicationExecutedEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bhp.SmartContract.LogEventArgs">
+    <Position X="8.75" Y="22.75" Width="5.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgAAAAAAAAAAAAAAABAAAAAAAAAAAIAAAAAA=</HashCode>
+      <FileName>SmartContract\LogEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bhp.SmartContract.NotifyEventArgs">
+    <Position X="15" Y="22.75" Width="5.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgAAAAAAAAAAAAAAABAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>SmartContract\NotifyEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bhp.Wallets.DataEntryPrefix">
+    <Position X="38.75" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAwAAAAAAEAAAAAACAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>Wallets\DataEntryPrefix.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bhp.Wallets.KeyPair">
+    <Position X="8.25" Y="1.75" Width="5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAAQAAgAAUgAAABAQAAAAAAIAAAAAAAAAAAAA=</HashCode>
+      <FileName>Wallets\KeyPair.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Bhp.Wallets.TransferOutput">
+    <Position X="14" Y="1.75" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAQAAAAAAAABAABgAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Wallets\TransferOutput.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bhp.Wallets.Wallet">
+    <Position X="17.5" Y="1.75" Width="12.75" />
+    <TypeIdentifier>
+      <HashCode>JAAIAIAAQAAEgBACIIACBAYAIAggAJIAAARAgUAQAAA=</HashCode>
+      <FileName>Wallets\Wallet.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bhp.Implementations.Wallets.BHP6.BHP6Wallet">
+    <Position X="18.25" Y="11.5" Width="5.25" />
+    <TypeIdentifier>
+      <HashCode>oAAYAKAARCAEAAQAIIACBAUAAIkkABAAAAQCI0AQAAA=</HashCode>
+      <FileName>Implementations\Wallets\BHP6\BHP6Wallet.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Bhp.Implementations.Wallets.EntityFramework.UserWallet">
+    <Position X="24.25" Y="11.5" Width="5.25" />
+    <TypeIdentifier>
+      <HashCode>IAAIAAAARSAAoAQBAIACBARAAIggCFQAAAQSAUAQIAA=</HashCode>
+      <FileName>Implementations\Wallets\EntityFramework\UserWallet.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Bhp.Wallets.WalletAccount">
+    <Position X="34.5" Y="1.75" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAQAQIAMAAAAAAAAAAAAAQABAAAAAACAAAIAAAAAAA=</HashCode>
+      <FileName>Wallets\WalletAccount.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bhp.Implementations.Wallets.BHP6.BHP6Account">
+    <Position X="31" Y="5.75" Width="5.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgIAAAAgAABQAGIAQAAAAAAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>Implementations\Wallets\BHP6\BHP6Account.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bhp.Implementations.Wallets.EntityFramework.UserWalletAccount">
+    <Position X="37.5" Y="5.75" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAAQAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Implementations\Wallets\EntityFramework\UserWalletAccount.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bhp.Wallets.WalletIndexer">
+    <Position X="42" Y="0.5" Width="5.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAgCAAAQAgAAAAAAFCAAAAgkAQAAAAQACAAAAAI=</HashCode>
+      <FileName>Wallets\WalletIndexer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Microsoft YaHei UI" Size="9" />
+</ClassDiagram>

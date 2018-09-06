@@ -29,6 +29,7 @@ namespace Bhp.UnitTests
             TestVerifiable verifiable = new TestVerifiable();
             byte[] res = verifiable.Sign(new KeyPair(TestUtils.GetByteArray(32,0x42)));      
             res.Length.Should().Be(64);
+           
         }
 
         [TestMethod]

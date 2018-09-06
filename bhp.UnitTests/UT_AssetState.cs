@@ -57,7 +57,7 @@ namespace Bhp.UnitTests
         [TestMethod]
         public void Name_Set()
         {
-            string val = "wake up Bhp";
+            string val = "wake up bhp";
             uut.Name = val;
             uut.Name.Should().Be(val);
         }
@@ -214,7 +214,7 @@ namespace Bhp.UnitTests
             assetType = AssetType.Token;
             assetState.AssetType = assetType;
 
-            name = "Bhp";
+            name = "bhp";
             assetState.Name = name;
 
             amount = new Fixed8(42);
@@ -414,7 +414,7 @@ namespace Bhp.UnitTests
             bool isFrozen;
             setupAssetStateWithValues(uut, out assetId, out assetType, out name, out amount, out available, out precision, out fee, out feeAddress, out owner, out admin, out issuer, out expiration, out isFrozen);
 
-            uut.GetName().Should().Be("Bhp");
+            uut.GetName().Should().Be("bhp");
             // The base class GetName() method should be be optimised to avoid the slow try / catch
         }
 
@@ -431,10 +431,10 @@ namespace Bhp.UnitTests
             uint expiration;
             bool isFrozen;
             setupAssetStateWithValues(uut, out assetId, out assetType, out name, out amount, out available, out precision, out fee, out feeAddress, out owner, out admin, out issuer, out expiration, out isFrozen);
-            uut.Name = "[{\"lang\":\"zh-CN\",\"name\":\"BHPC\"},{\"lang\":\"en\",\"name\":\"Bhp\"}]";
+            uut.Name = "[{\"lang\":\"zh-CN\",\"name\":\"BHPC\"},{\"lang\":\"en\",\"name\":\"BHPC\"}]";
 
             uut.GetName(new CultureInfo("zh-CN")).Should().Be("BHPC");
-            uut.GetName(new CultureInfo("en")).Should().Be("Bhp");
+            uut.GetName(new CultureInfo("en")).Should().Be("BHPC");
         }
 
         [TestMethod]
@@ -450,7 +450,7 @@ namespace Bhp.UnitTests
             uint expiration;
             bool isFrozen;
             setupAssetStateWithValues(uut, out assetId, out assetType, out name, out amount, out available, out precision, out fee, out feeAddress, out owner, out admin, out issuer, out expiration, out isFrozen);
-            uut.Name = "[{\"lang\":\"zh-CN\",\"name\":\"BHPC\"},{\"lang\":\"en\",\"name\":\"Bhp\"}]";
+            uut.Name = "[{\"lang\":\"zh-CN\",\"name\":\"BHPC\"},{\"lang\":\"en\",\"name\":\"BHPC\"}]";
 
             CultureInfo.CurrentCulture = new CultureInfo("en");
             uut.GetName().Should().Be("Bhp");
@@ -469,7 +469,7 @@ namespace Bhp.UnitTests
             uint expiration;
             bool isFrozen;
             setupAssetStateWithValues(uut, out assetId, out assetType, out name, out amount, out available, out precision, out fee, out feeAddress, out owner, out admin, out issuer, out expiration, out isFrozen);
-            uut.Name = "[{\"lang\":\"zh-CN\",\"name\":\"BHPC\"},{\"lang\":\"en\",\"name\":\"Bhp\"}]";
+            uut.Name = "[{\"lang\":\"zh-CN\",\"name\":\"BHPC\"},{\"lang\":\"en\",\"name\":\"BHPC\"}]";
 
             CultureInfo.CurrentCulture = new CultureInfo("zh-CN");
             uut.GetName().Should().Be("BHPC");
@@ -488,10 +488,10 @@ namespace Bhp.UnitTests
             uint expiration;
             bool isFrozen;
             setupAssetStateWithValues(uut, out assetId, out assetType, out name, out amount, out available, out precision, out fee, out feeAddress, out owner, out admin, out issuer, out expiration, out isFrozen);
-            uut.Name = "[{\"lang\":\"zh-CN\",\"name\":\"BHPC\"},{\"lang\":\"en\",\"name\":\"Bhp\"}]";
+            uut.Name = "[{\"lang\":\"zh-CN\",\"name\":\"BHPC\"},{\"lang\":\"en\",\"name\":\"BHPC\"}]";
 
             CultureInfo.CurrentCulture = new CultureInfo("de-DE");
-            uut.GetName().Should().Be("Bhp"); // defaults to english IF english is in the name
+            uut.GetName().Should().Be("BHPC"); // defaults to english IF english is in the name
         }
 
         [TestMethod]
@@ -507,10 +507,10 @@ namespace Bhp.UnitTests
             uint expiration;
             bool isFrozen;
             setupAssetStateWithValues(uut, out assetId, out assetType, out name, out amount, out available, out precision, out fee, out feeAddress, out owner, out admin, out issuer, out expiration, out isFrozen);
-            uut.Name = "[{\"lang\":\"zh-CN\",\"name\":\"BHPC\"},{\"lang\":\"foo\",\"name\":\"bar\"}]";
+            uut.Name = "[{\"lang\":\"zh-CN\",\"name\":\"小蚁股\"},{\"lang\":\"foo\",\"name\":\"bar\"}]";
 
             CultureInfo.CurrentCulture = new CultureInfo("de-DE");
-            uut.GetName().Should().Be("BHPC"); // defaults to first name IF english is not in the name
+            uut.GetName().Should().Be("小蚁股"); // defaults to first name IF english is not in the name
         }
 
 

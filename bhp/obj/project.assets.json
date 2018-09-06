@@ -2,20 +2,6 @@
   "version": 3,
   "targets": {
     ".NETFramework,Version=v4.7": {
-      "Bhp.VM/1.0.0": {
-        "type": "package",
-        "frameworkAssemblies": [
-          "Microsoft.CSharp",
-          "System",
-          "System.Numerics"
-        ],
-        "compile": {
-          "lib/net461/Bhp.VM.dll": {}
-        },
-        "runtime": {
-          "lib/net461/Bhp.VM.dll": {}
-        }
-      },
       "Libuv/1.10.0": {
         "type": "package",
         "dependencies": {
@@ -973,21 +959,19 @@
         "runtime": {
           "lib/netstandard2.0/System.Threading.Tasks.Extensions.dll": {}
         }
+      },
+      "Bhp.VM/0.5.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.6.1",
+        "compile": {
+          "bin/placeholder/Bhp.VM.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Bhp.VM.dll": {}
+        }
       }
     },
     ".NETStandard,Version=v2.0": {
-      "Bhp.VM/1.0.0": {
-        "type": "package",
-        "dependencies": {
-          "NETStandard.Library": "1.6.0"
-        },
-        "compile": {
-          "lib/netstandard1.6/Bhp.VM.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard1.6/Bhp.VM.dll": {}
-        }
-      },
       "Libuv/1.10.0": {
         "type": "package",
         "dependencies": {
@@ -1569,7 +1553,7 @@
           "lib/netstandard1.0/_._": {}
         }
       },
-      "NETStandard.Library/2.0.1": {
+      "NETStandard.Library/2.0.3": {
         "type": "package",
         "dependencies": {
           "Microsoft.NETCore.Platforms": "1.1.0"
@@ -2416,21 +2400,23 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XmlDocument.dll": {}
         }
+      },
+      "Bhp.VM/0.5.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v1.6",
+        "dependencies": {
+          "NETStandard.Library": "1.6.0"
+        },
+        "compile": {
+          "bin/placeholder/Bhp.VM.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Bhp.VM.dll": {}
+        }
       }
     }
   },
   "libraries": {
-    "Bhp.VM/1.0.0": {
-      "sha512": "2dCHe0aawA7Y3XEM4c+l4k5uczliQKg4fhYo65tIfiIVq4P51Fb2v3wJPKH7EZhBpBI2ED/QLxEc3x7Y9WJ5Vg==",
-      "type": "package",
-      "path": "bhp.vm/1.0.0",
-      "files": [
-        "bhp.vm.1.0.0.nupkg.sha512",
-        "bhp.vm.nuspec",
-        "lib/net461/Bhp.VM.dll",
-        "lib/netstandard1.6/Bhp.VM.dll"
-      ]
-    },
     "Libuv/1.10.0": {
       "sha512": "GsCf4q+eyaI49rCPlgYxdxa1SQCysXFFdSJWdstrwxytg4+VPYLYrXD4AT2rjHVJ+UF7SSWX9CapWEYaU4ejVQ==",
       "type": "package",
@@ -2981,16 +2967,13 @@
         "runtime.json"
       ]
     },
-    "NETStandard.Library/2.0.1": {
-      "sha512": "oA6nwv9MhEKYvLpjZ0ggSpb1g4CQViDVQjLUcDWg598jtvJbpfeP2reqwI1GLW2TbxC/Ml7xL6BBR1HmKPXlTg==",
+    "NETStandard.Library/2.0.3": {
+      "sha512": "st47PosZSHrjECdjeIzZQbzivYBJFv6P2nv4cj2ypdI204DO+vZ7l5raGMiX4eXMJ53RfOIg+/s4DHVZ54Nu2A==",
       "type": "package",
-      "path": "netstandard.library/2.0.1",
+      "path": "netstandard.library/2.0.3",
       "files": [
         "LICENSE.TXT",
-        "NETStandard.Library.2.0.1.nupkg.sha512",
-        "NETStandard.Library.nuspec",
         "THIRD-PARTY-NOTICES.TXT",
-        "build/NETStandard.Library.targets",
         "build/netstandard2.0/NETStandard.Library.targets",
         "build/netstandard2.0/ref/Microsoft.Win32.Primitives.dll",
         "build/netstandard2.0/ref/System.AppContext.dll",
@@ -3106,7 +3089,9 @@
         "build/netstandard2.0/ref/mscorlib.dll",
         "build/netstandard2.0/ref/netstandard.dll",
         "build/netstandard2.0/ref/netstandard.xml",
-        "lib/netstandard1.0/_._"
+        "lib/netstandard1.0/_._",
+        "netstandard.library.2.0.3.nupkg.sha512",
+        "netstandard.library.nuspec"
       ]
     },
     "Newtonsoft.Json/10.0.1": {
@@ -6793,11 +6778,16 @@
         "system.xml.xmldocument.4.3.0.nupkg.sha512",
         "system.xml.xmldocument.nuspec"
       ]
+    },
+    "Bhp.VM/0.5.0": {
+      "type": "project",
+      "path": "../../bhp-vm-2.3.1/src/bhp-vm/bhp-vm.csproj",
+      "msbuildProject": "../../bhp-vm-2.3.1/src/bhp-vm/bhp-vm.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETFramework,Version=v4.7": [
-      "Bhp.VM >= 1.0.0",
+      "Bhp.VM >= 0.5.0",
       "Microsoft.AspNetCore.ResponseCompression >= 2.0.2",
       "Microsoft.AspNetCore.Server.Kestrel >= 2.0.2",
       "Microsoft.AspNetCore.Server.Kestrel.Https >= 2.0.2",
@@ -6807,14 +6797,14 @@
       "Replicon.Cryptography.SCrypt >= 1.1.6.13"
     ],
     ".NETStandard,Version=v2.0": [
-      "Bhp.VM >= 1.0.0",
+      "Bhp.VM >= 0.5.0",
       "Microsoft.AspNetCore.ResponseCompression >= 2.0.2",
       "Microsoft.AspNetCore.Server.Kestrel >= 2.0.2",
       "Microsoft.AspNetCore.Server.Kestrel.Https >= 2.0.2",
       "Microsoft.AspNetCore.WebSockets >= 2.0.2",
       "Microsoft.EntityFrameworkCore.Sqlite >= 2.0.2",
       "Microsoft.Extensions.Configuration.Json >= 2.0.1",
-      "NETStandard.Library >= 2.0.1"
+      "NETStandard.Library >= 2.0.3"
     ]
   },
   "packageFolders": {
@@ -6822,13 +6812,13 @@
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
-    "version": "1.3.0",
+    "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\BHP\\bhp\\bhp\\bhp.csproj",
+      "projectUniqueName": "D:\\BHP\\20180817\\bhp-2.8.0\\bhp\\bhp.csproj",
       "projectName": "Bhp",
-      "projectPath": "D:\\BHP\\bhp\\bhp\\bhp.csproj",
+      "projectPath": "D:\\BHP\\20180817\\bhp-2.8.0\\bhp\\bhp.csproj",
       "packagesPath": "C:\\Users\\MY-BHPC\\.nuget\\packages\\",
-      "outputPath": "D:\\BHP\\bhp\\bhp\\obj\\",
+      "outputPath": "D:\\BHP\\20180817\\bhp-2.8.0\\bhp\\obj\\",
       "projectStyle": "PackageReference",
       "crossTargeting": true,
       "fallbackFolders": [
@@ -6848,10 +6838,18 @@
       },
       "frameworks": {
         "net47": {
-          "projectReferences": {}
+          "projectReferences": {
+            "D:\\BHP\\20180817\\bhp-vm-2.3.1\\src\\bhp-vm\\bhp-vm.csproj": {
+              "projectPath": "D:\\BHP\\20180817\\bhp-vm-2.3.1\\src\\bhp-vm\\bhp-vm.csproj"
+            }
+          }
         },
         "netstandard2.0": {
-          "projectReferences": {}
+          "projectReferences": {
+            "D:\\BHP\\20180817\\bhp-vm-2.3.1\\src\\bhp-vm\\bhp-vm.csproj": {
+              "projectPath": "D:\\BHP\\20180817\\bhp-vm-2.3.1\\src\\bhp-vm\\bhp-vm.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
@@ -6863,10 +6861,6 @@
     "frameworks": {
       "net47": {
         "dependencies": {
-          "Bhp.VM": {
-            "target": "Package",
-            "version": "[1.0.0, )"
-          },
           "Microsoft.AspNetCore.ResponseCompression": {
             "target": "Package",
             "version": "[2.0.2, )"
@@ -6899,10 +6893,6 @@
       },
       "netstandard2.0": {
         "dependencies": {
-          "Bhp.VM": {
-            "target": "Package",
-            "version": "[1.0.0, )"
-          },
           "Microsoft.AspNetCore.ResponseCompression": {
             "target": "Package",
             "version": "[2.0.2, )"
@@ -6930,7 +6920,7 @@
           "NETStandard.Library": {
             "suppressParent": "All",
             "target": "Package",
-            "version": "[2.0.1, )",
+            "version": "[2.0.3, )",
             "autoReferenced": true
           }
         },

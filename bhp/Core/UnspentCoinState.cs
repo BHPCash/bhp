@@ -4,8 +4,15 @@ using System.Linq;
 
 namespace Bhp.Core
 {
+    /// <summary>
+    /// 未花费的交易状态(可用币)
+    /// <para>An unspent transaction state (available currency)</para>
+    /// </summary>
     public class UnspentCoinState : StateBase, ICloneable<UnspentCoinState>
     {
+        /// <summary>
+        /// 每一项的状态
+        /// </summary>
         public CoinState[] Items;
 
         public override int Size => base.Size + Items.GetVarSize();

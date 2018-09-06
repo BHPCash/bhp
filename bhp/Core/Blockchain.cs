@@ -16,7 +16,14 @@ namespace Bhp.Core
     /// </summary>
     public abstract class Blockchain : IDisposable, IScriptTable
     {
+        /// <summary>
+        /// 区块数据打包完成
+        /// </summary>
         public static event EventHandler<Block> PersistCompleted;
+        /// <summary>
+        /// 区块数据解锁成功
+        /// </summary>
+        public static event EventHandler<Block> PersistUnlocked;
 
         public CancellationTokenSource VerificationCancellationToken { get; protected set; } = new CancellationTokenSource();
         public object PersistLock { get; } = new object();
@@ -48,10 +55,10 @@ namespace Bhp.Core
             AssetType = AssetType.GoverningToken,
             Name = "[{\"lang\":\"zh-CN\",\"name\":\"BHPC\"},{\"lang\":\"en\",\"name\":\"BHPC\"}]",
             Amount = Fixed8.FromDecimal(100000000),
-            Precision = 0,
-            Owner = ECCurve.Secp256r1.Infinity,
-            Admin = (new[] { (byte)OpCode.PUSHT }).ToScriptHash(),
-            Attributes = new TransactionAttribute[0],
+            Precision = 8,//bhpc最小单位是0.00000001
+            Owner = ECCurve.Secp256r1.Infinity,// 发行者的公钥
+            Admin = (new[] { (byte)OpCode.PUSHT }).ToScriptHash(),// 资产管理员的合约散列值
+            Attributes = new TransactionAttribute[0],// 交易特性 ：用途及其数据 
             Inputs = new CoinReference[0],
             Outputs = new TransactionOutput[0],
             Scripts = new Witness[0]
@@ -78,7 +85,7 @@ namespace Bhp.Core
         public static readonly Block GenesisBlock = new Block
         {
             PrevHash = UInt256.Zero,
-            Timestamp = (new DateTime(2018, 06, 06, 06, 06, 06, DateTimeKind.Utc)).ToTimestamp(),
+            Timestamp = (new DateTime(2018, 06, 18, 06, 18, 18, DateTimeKind.Utc)).ToTimestamp(),
             Index = 0,
             ConsensusData = 2083236893, //向比特币致敬
             NextConsensus = GetConsensusAddress(StandbyValidators),
@@ -260,11 +267,22 @@ namespace Bhp.Core
         /// <returns>如果包含指定交易则返回true</returns>
         public abstract bool ContainsTransaction(UInt256 hash);
 
+        /// <summary>
+        /// 根据交易Hash，检测是否有未花费的交易
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
         public bool ContainsUnspent(CoinReference input)
         {
             return ContainsUnspent(input.PrevHash, input.PrevIndex);
         }
 
+        /// <summary>
+        /// 根据交易Hash和输出序列，查询是否有未花费的交易
+        /// </summary>
+        /// <param name="hash"></param>
+        /// <param name="index"></param>
+        /// <returns></returns>
         public abstract bool ContainsUnspent(UInt256 hash, ushort index);
 
         public abstract MetaDataCache<T> GetMetaData<T>() where T : class, ISerializable, new();
@@ -509,6 +527,11 @@ namespace Bhp.Core
         /// <returns>返回一个交易输出，表示一个未花费的资产</returns>
         public abstract TransactionOutput GetUnspent(UInt256 hash, ushort index);
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="hash"></param>
+        /// <returns></returns>
         public abstract IEnumerable<TransactionOutput> GetUnspent(UInt256 hash);
 
         /// <summary>
@@ -524,11 +547,16 @@ namespace Bhp.Core
         /// <param name="block">区块</param>
         protected void OnPersistCompleted(Block block)
         {
+            PersistCompleted?.Invoke(this, block);
+        }
+
+        protected void OnPersistUnlocked(Block block)
+        {
             lock (_validators)
             {
                 _validators.Clear();
             }
-            PersistCompleted?.Invoke(this, block);
+            PersistUnlocked?.Invoke(this, block);
         }
 
         protected void ProcessAccountStateDescriptor(StateDescriptor descriptor, DataCache<UInt160, AccountState> accounts, DataCache<ECPoint, ValidatorState> validators, MetaDataCache<ValidatorsCountState> validators_count)

@@ -61,7 +61,7 @@ namespace Bhp.Consensus
             return true;
         }
 
-        private void Blockchain_PersistCompleted(object sender, Block block)
+        private void Blockchain_PersistUnlocked(object sender, Block block)
         {
             Log($"persist block: {block.Hash}");
             block_received_time = DateTime.Now;
@@ -113,7 +113,7 @@ namespace Bhp.Consensus
             if (timer != null) timer.Dispose();
             if (started)
             {
-                Blockchain.PersistCompleted -= Blockchain_PersistCompleted;
+                Blockchain.PersistUnlocked -= Blockchain_PersistUnlocked;
                 LocalNode.InventoryReceiving -= LocalNode_InventoryReceiving;
                 LocalNode.InventoryReceived -= LocalNode_InventoryReceived;
             }
@@ -121,9 +121,10 @@ namespace Bhp.Consensus
 
         private void FillContext()
         {
-            List<Transaction> transactions = LocalNode.GetMemoryPool().Where(p => CheckPolicy(p)).ToList();
-            if (transactions.Count >= Settings.Default.MaxTransactionsPerBlock)
-                transactions = transactions.OrderByDescending(p => p.NetworkFee / p.Size).Take(Settings.Default.MaxTransactionsPerBlock - 1).ToList();
+            IEnumerable<Transaction> mem_pool = LocalNode.GetMemoryPool().Where(p => CheckPolicy(p));
+            foreach (PolicyPlugin plugin in PolicyPlugin.Instances)
+                mem_pool = plugin.Filter(mem_pool);
+            List<Transaction> transactions = mem_pool.ToList();
             Fixed8 amount_netfee = Block.CalculateNetFee(transactions);
             TransactionOutput[] outputs = amount_netfee == Fixed8.Zero ? new TransactionOutput[0] : new[] { new TransactionOutput
             {
@@ -220,7 +221,7 @@ namespace Bhp.Consensus
 
                         if (Blockchain.Default?.Height + 1 < payload.BlockIndex)
                         {
-                            Log($"chain sync: expected={payload.BlockIndex} current: {Blockchain.Default?.Height}");
+                            Log($"chain sync: expected={payload.BlockIndex} current: {Blockchain.Default?.Height} nodes={localNode.RemoteNodeCount}");
 
                             localNode.RequestGetBlocks();
                         }
@@ -390,7 +391,7 @@ namespace Bhp.Consensus
         {
             Log("OnStart");
             started = true;
-            Blockchain.PersistCompleted += Blockchain_PersistCompleted;
+            Blockchain.PersistUnlocked += Blockchain_PersistUnlocked;
             LocalNode.InventoryReceiving += LocalNode_InventoryReceiving;
             LocalNode.InventoryReceived += LocalNode_InventoryReceived;
             InitializeConsensus(0);

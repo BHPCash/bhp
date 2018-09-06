@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Comment CommentText="Json">
+    <Position X="7.708" Y="0.802" Height="0.385" Width="0.867" />
+  </Comment>
+  <Class Name="Bhp.IO.Json.JArray">
+    <Position X="2.25" Y="8.5" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AEIgAEAAAAAAABAUCAgABAQAAAAAAAAECAAAAABQIAA=</HashCode>
+      <FileName>IO\Json\JArray.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Bhp.IO.Json.JObject">
+    <Position X="7" Y="2" Width="5.25" />
+    <TypeIdentifier>
+      <HashCode>AAIgAAAAABAIAAgEyBAAgBAAAAAACAAIAAIAAAECAgA=</HashCode>
+      <FileName>IO\Json\JObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Object" Collapsed="true">
+    <Position X="9" Y="0.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Bhp.IO.Json.JBoolean">
+    <Position X="6.25" Y="8.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAAAAgEQAAAAAAAAAAAAAAAAAIgAAAAAAA=</HashCode>
+      <FileName>IO\Json\JBoolean.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bhp.IO.Json.JNumber">
+    <Position X="9.75" Y="8.5" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAAAAgEwAAAgAAAIAAAAAAAAAIgAAAAAAA=</HashCode>
+      <FileName>IO\Json\JNumber.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bhp.IO.Json.JString">
+    <Position X="13.75" Y="8.5" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAAAAgEwAAAgAAAAAAAAAAAAAIgAAAAAAA=</HashCode>
+      <FileName>IO\Json\JString.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Microsoft YaHei UI" Size="9" />
+</ClassDiagram>

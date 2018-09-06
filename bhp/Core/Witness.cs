@@ -28,12 +28,16 @@ namespace Bhp.Core
         {
             InvocationScript = reader.ReadVarBytes(65536);
             VerificationScript = reader.ReadVarBytes(65536);
+            
         }
 
         void ISerializable.Serialize(BinaryWriter writer)
         {
             writer.WriteVarBytes(InvocationScript);
             writer.WriteVarBytes(VerificationScript);
+
+            
+             
         }
 
         /// <summary>

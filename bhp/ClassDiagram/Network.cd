@@ -1,0 +1,182 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Comment CommentText="Network">
+    <Position X="46.586" Y="0.552" Height="0.284" Width="0.919" />
+  </Comment>
+  <Class Name="Bhp.Network.LocalNode">
+    <Position X="38.5" Y="1.75" Width="6.25" />
+    <TypeIdentifier>
+      <HashCode>IjoIQRgAAiURsCCQAAQdAgEQKIgIFmIAAEECKBlECAA=</HashCode>
+      <FileName>Network\LocalNode.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Object" Collapsed="true">
+    <Position X="47.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Bhp.Network.RemoteNode">
+    <Position X="14.75" Y="1.75" Width="5" />
+    <TypeIdentifier>
+      <HashCode>oYaoIAQAQmAArAAAQAAAICAQAgAABYAwAQACAgAWAgQ=</HashCode>
+      <FileName>Network\RemoteNode.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Bhp.Network.TcpRemoteNode">
+    <Position X="11.25" Y="12.25" Width="4.75" />
+    <TypeIdentifier>
+      <HashCode>AQYAAABAAAAAAAAAAAAAAAAAAAgABAIACAEAAAAAAAA=</HashCode>
+      <FileName>Network\TcpRemoteNode.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bhp.Network.WebSocketRemoteNode">
+    <Position X="16.75" Y="12.25" Width="6.5" />
+    <TypeIdentifier>
+      <HashCode>AQYAAABAAAAAAAAAAAAAAAAAAAAABAAAAAEAAAAAAAA=</HashCode>
+      <FileName>Network\WebSocketRemoteNode.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bhp.Network.UPnP">
+    <Position X="4.75" Y="1.75" Width="5.75" />
+    <TypeIdentifier>
+      <HashCode>ABAAACAAAIQAAAIAAAAAACEAAAAAAAAAQAAAAAACAAA=</HashCode>
+      <FileName>Network\UPnP.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bhp.Network.Message">
+    <Position X="24" Y="1.75" Width="7" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAgAgEAAAAAYBgAAAAAAAEAAAIAAAAgAIAA=</HashCode>
+      <FileName>Network\Message.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Bhp.Network.InventoryReceivingEventArgs">
+    <Position X="0.5" Y="7" Width="3.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAA=</HashCode>
+      <FileName>Network\InventoryReceivingEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.ComponentModel.CancelEventArgs" Collapsed="true">
+    <Position X="1.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Bhp.Network.RPC.RpcException" Collapsed="true">
+    <Position X="93.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Network\RPC\RpcException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bhp.Network.RPC.RpcServer">
+    <Position X="31.75" Y="1.75" Width="6" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAACAAIAABAhAAAAAAAAAAAAAAAAgAAADAAAA=</HashCode>
+      <FileName>Network\RPC\RpcServer.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Bhp.Network.Payloads.AddrPayload">
+    <Position X="45.5" Y="1.75" Width="4.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAAAAgAAAAAAIAAAAAAAAAEAAAAAAAAAAIAA=</HashCode>
+      <FileName>Network\Payloads\AddrPayload.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Bhp.Network.Payloads.ConsensusPayload">
+    <Position X="51" Y="1.75" Width="4.25" />
+    <TypeIdentifier>
+      <HashCode>KAgAAAAABAQIoQAACAALAAAAAAAAABBAAAAAkAAgIAA=</HashCode>
+      <FileName>Network\Payloads\ConsensusPayload.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Bhp.Network.Payloads.FilterAddPayload">
+    <Position X="56" Y="1.75" Width="3.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAIAAAAAAAAABAAAAAAAAAAIAA=</HashCode>
+      <FileName>Network\Payloads\FilterAddPayload.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Bhp.Network.Payloads.FilterLoadPayload">
+    <Position X="82.75" Y="1.75" Width="3.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAAAgAAAAAAIAAAAABAAAEAAAAAAAIAAIAA=</HashCode>
+      <FileName>Network\Payloads\FilterLoadPayload.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Bhp.Network.Payloads.GetBlocksPayload">
+    <Position X="87.25" Y="1.75" Width="5.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAIAAAAAAAIAEAAAAAIAAAAIAA=</HashCode>
+      <FileName>Network\Payloads\GetBlocksPayload.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Bhp.Network.Payloads.HeadersPayload">
+    <Position X="72.25" Y="1.75" Width="4.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAIAAAACAAAAEAAAAAAAAAAIAA=</HashCode>
+      <FileName>Network\Payloads\HeadersPayload.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Bhp.Network.Payloads.InvPayload">
+    <Position X="77.25" Y="1.75" Width="4.75" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAgAAAAAAIAAAAAAAAAEAAAQAAAAAAIAA=</HashCode>
+      <FileName>Network\Payloads\InvPayload.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Bhp.Network.Payloads.MerkleBlockPayload">
+    <Position X="67.25" Y="7.75" Width="4" />
+    <TypeIdentifier>
+      <HashCode>AABABAAAAAAAgAAAAAAAAABAACBAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Network\Payloads\MerkleBlockPayload.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bhp.Core.BlockBase">
+    <Position X="67.25" Y="1.75" Width="4.25" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAABA4IoQAACAACAAAAACBAAEBAIAEAEAAwAAA=</HashCode>
+      <FileName>Core\BlockBase.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Bhp.Network.Payloads.NetworkAddressWithTime">
+    <Position X="60.5" Y="1.75" Width="6" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAAwAAAAAAKAAAAAAAAAEAACAAAAAAAIAA=</HashCode>
+      <FileName>Network\Payloads\NetworkAddressWithTime.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="Bhp.Network.IInventory">
+    <Position X="0.5" Y="2" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIAAQAAAAAAAAgAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Network\IInventory.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Bhp.Core.IVerifiable" Collapsed="true">
+    <Position X="1.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAIgAAAAAAAAAQAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Core\IVerifiable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="Bhp.Network.InventoryType" Collapsed="true">
+    <Position X="93.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAA=</HashCode>
+      <FileName>Network\InventoryType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Microsoft YaHei UI" Size="9" />
+</ClassDiagram>

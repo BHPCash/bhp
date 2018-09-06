@@ -9,6 +9,9 @@ namespace Bhp.SmartContract
 {
     public class Contract
     {
+        /// <summary>
+        /// 智能合约脚本
+        /// </summary>
         public byte[] Script;
         public ContractParameterType[] ParameterList;
 
@@ -96,12 +99,18 @@ namespace Bhp.SmartContract
             };
         }
 
+        /// <summary>
+        /// 智能合约：用公钥创建的地址脚本，当用自己的账户给别人转账时，
+        /// 就会调用这个合约来验证签名
+        /// </summary>
+        /// <param name="publicKey">公钥</param>
+        /// <returns></returns>
         public static byte[] CreateSignatureRedeemScript(ECPoint publicKey)
         {
             using (ScriptBuilder sb = new ScriptBuilder())
             {
-                sb.EmitPush(publicKey.EncodePoint(true));
-                sb.Emit(OpCode.CHECKSIG);
+                sb.EmitPush(publicKey.EncodePoint(true));//放自己的公钥
+                sb.Emit(OpCode.CHECKSIG);//签名验证，用公钥来检查是否是自己的签名
                 return sb.ToArray();
             }
         }

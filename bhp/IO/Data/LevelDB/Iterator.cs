@@ -2,7 +2,7 @@
 
 namespace Bhp.IO.Data.LevelDB
 {
-    internal class Iterator : IDisposable
+    public class Iterator : IDisposable
     {
         private IntPtr handle;
 

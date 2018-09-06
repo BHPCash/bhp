@@ -104,8 +104,8 @@ namespace Bhp.Wallets
                     script = sb.ToArray();
                 }
                 ApplicationEngine engine = ApplicationEngine.Run(script);
-                byte decimals = (byte)engine.EvaluationStack.Pop().GetBigInteger();
-                BigInteger amount = ((VMArray)engine.EvaluationStack.Pop()).Aggregate(BigInteger.Zero, (x, y) => x + y.GetBigInteger());
+                byte decimals = (byte)engine.ResultStack.Pop().GetBigInteger();
+                BigInteger amount = ((VMArray)engine.ResultStack.Pop()).Aggregate(BigInteger.Zero, (x, y) => x + y.GetBigInteger());
                 return new BigDecimal(amount, decimals);
             }
             else
@@ -210,6 +210,15 @@ namespace Bhp.Wallets
             return account;
         }
 
+        /// <summary>
+        /// 构造一笔交易
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="tx">交易对象（包括输出方[接收资产的地址]）</param>
+        /// <param name="from">发送方</param>
+        /// <param name="change_address">找零地址</param>
+        /// <param name="fee">交易费</param>
+        /// <returns></returns>
         public T MakeTransaction<T>(T tx, UInt160 from = null, UInt160 change_address = null, Fixed8 fee = default(Fixed8)) where T : Transaction
         {
             if (tx.Outputs == null) tx.Outputs = new TransactionOutput[0];
@@ -305,7 +314,7 @@ namespace Bhp.Wallets
                         }
                         ApplicationEngine engine = ApplicationEngine.Run(script);
                         if (engine.State.HasFlag(VMState.FAULT)) return null;
-                        var balances = ((IEnumerable<StackItem>)(VMArray)engine.EvaluationStack.Pop()).Reverse().Zip(accounts, (i, a) => new
+                        var balances = ((IEnumerable<StackItem>)(VMArray)engine.ResultStack.Pop()).Reverse().Zip(accounts, (i, a) => new
                         {
                             Account = a,
                             Value = i.GetBigInteger()

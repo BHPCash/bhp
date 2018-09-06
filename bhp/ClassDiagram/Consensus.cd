@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Comment CommentText="Consensus">
+    <Position X="9.826" Y="0.5" Height="0.292" Width="1.106" />
+  </Comment>
+  <Class Name="Bhp.Consensus.ConsensusService">
+    <Position X="0.75" Y="1.75" Width="6.25" />
+    <TypeIdentifier>
+      <HashCode>AIxGABAZACAgEAAAEAEAIwAAAAwAAAAEAAQAAAaIAAA=</HashCode>
+      <FileName>Consensus\ConsensusService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Bhp.Consensus.PrepareRequest">
+    <Position X="7.75" Y="5.5" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAgAAAAAAAAAAAAAACBAIAAAAAAAAAAAiAE=</HashCode>
+      <FileName>Consensus\PrepareRequest.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bhp.Consensus.PrepareResponse">
+    <Position X="11.5" Y="5.5" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAACBAAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>Consensus\PrepareResponse.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bhp.Consensus.ConsensusContext">
+    <Position X="19" Y="1.75" Width="4.5" />
+    <TypeIdentifier>
+      <HashCode>IBGAEAAAAAhABEAACgIDAAAAAAIAoACAgAAABAIBCAA=</HashCode>
+      <FileName>Consensus\ConsensusContext.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bhp.Consensus.ConsensusMessage">
+    <Position X="11" Y="1.75" Width="3.75" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAgAgAAAAAAAAAAAAiBAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>Consensus\ConsensusMessage.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Bhp.Consensus.ChangeView">
+    <Position X="15.25" Y="5.5" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAACBAAAAAAAAEAAAAAAA=</HashCode>
+      <FileName>Consensus\ChangeView.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Object" Collapsed="true">
+    <Position X="11.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Enum Name="Bhp.Consensus.ConsensusMessageType">
+    <Position X="24.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Consensus\ConsensusMessageType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Bhp.Consensus.ConsensusState">
+    <Position X="26.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAIAQAAAAAEgAAAAAAAAQAAAAAAAAAAABAAACAAAA=</HashCode>
+      <FileName>Consensus\ConsensusState.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Microsoft YaHei UI" Size="9" />
+</ClassDiagram>

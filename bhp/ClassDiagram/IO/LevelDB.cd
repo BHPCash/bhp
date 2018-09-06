@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="Bhp.IO.Data.LevelDB.DB">
+    <Position X="3.75" Y="1.75" Width="4.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAIABAAAAAABAAAAEEAAAIAAADAAEAAAg=</HashCode>
+      <FileName>IO\Data\LevelDB\DB.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Object" Collapsed="true">
+    <Position X="25" Y="0.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Bhp.IO.Data.LevelDB.DbCache&lt;TKey, TValue&gt;">
+    <Position X="24.25" Y="7.5" Width="5.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAWAAAAAAAAAAAAAggIAgAABAAAAAEAAAA=</HashCode>
+      <FileName>IO\Data\LevelDB\DbCache.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bhp.IO.Caching.DataCache&lt;TKey, TValue&gt;">
+    <Position X="27.25" Y="1.75" Width="5.25" />
+    <NestedTypes>
+      <Class Name="Bhp.IO.Caching.DataCache&lt;TKey, TValue&gt;.Trackable" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>IO\Caching\DataCache.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAIAAEAAAAAGQAAACAIAAAgkAgkMAAAABAABAAAAAAA=</HashCode>
+      <FileName>IO\Caching\DataCache.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bhp.IO.Caching.CloneCache&lt;TKey, TValue&gt;">
+    <Position X="30.25" Y="7.5" Width="5.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAGAAAAAAACAAAAAggIAAAABAAAAAAAAAA=</HashCode>
+      <FileName>IO\Caching\CloneCache.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bhp.IO.Data.LevelDB.DbMetaDataCache&lt;T&gt;">
+    <Position X="12" Y="5" Width="4.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAQAAAAAAAAAAAAAAgAAgAAAAAAAAAAAAA=</HashCode>
+      <FileName>IO\Data\LevelDB\DbMetaDataCache.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bhp.IO.Caching.MetaDataCache&lt;T&gt;">
+    <Position X="13" Y="1.75" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAABAAAAAAAAkAAgAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>IO\Caching\MetaDataCache.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bhp.IO.Data.LevelDB.Iterator">
+    <Position X="45.75" Y="1.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAACAAQAQACAAAAAACAAAACEAAAAAiBAAAAAA=</HashCode>
+      <FileName>IO\Data\LevelDB\Iterator.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Bhp.IO.Data.LevelDB.LevelDBException">
+    <Position X="2.75" Y="9.25" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IO\Data\LevelDB\LevelDBException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Data.Common.DbException">
+    <Position X="1.75" Y="6.5" Width="4.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Bhp.IO.Data.LevelDB.Native" Collapsed="true">
+    <Position X="48.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AkgBKAyWBBCoBBhAEEAIgBCUBwUAwBBuBnIGRAkiACA=</HashCode>
+      <FileName>IO\Data\LevelDB\Native.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bhp.IO.Data.LevelDB.NativeHelper">
+    <Position X="50.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IO\Data\LevelDB\Native.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bhp.IO.Data.LevelDB.Options">
+    <Position X="38.75" Y="1.75" Width="3" />
+    <TypeIdentifier>
+      <HashCode>ABAAJAAAIAAAAAAAAAAAIAAEAAAAAAABgAACACAABAA=</HashCode>
+      <FileName>IO\Data\LevelDB\Options.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bhp.IO.Data.LevelDB.ReadOptions">
+    <Position X="42.5" Y="1.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAgAAIAAAAAIAAAAAAAAAAAAAACAAAAAAA=</HashCode>
+      <FileName>IO\Data\LevelDB\ReadOptions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bhp.IO.Data.LevelDB.SliceBuilder">
+    <Position X="20" Y="1.75" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAAAAABAAAAAAAEAAAAAAQAAAAAAA=</HashCode>
+      <FileName>IO\Data\LevelDB\SliceBuilder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bhp.IO.Data.LevelDB.Snapshot">
+    <Position X="36.25" Y="1.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAQAAAAAAAAAAAAAAAAAAAAAAACAAAAAAA=</HashCode>
+      <FileName>IO\Data\LevelDB\Snapshot.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Bhp.IO.Data.LevelDB.WriteBatch">
+    <Position X="8.75" Y="1.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAACAABAAAg=</HashCode>
+      <FileName>IO\Data\LevelDB\WriteBatch.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bhp.IO.Data.LevelDB.WriteOptions">
+    <Position X="17.25" Y="1.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAACAAAAAIAAAAAAAAAAAAAACAAAAAAA=</HashCode>
+      <FileName>IO\Data\LevelDB\WriteOptions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="Bhp.IO.Data.LevelDB.Slice" BaseTypeListCollapsed="true">
+    <Position X="51" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQEgACARgAAAAAAAIAgAJBAogZAByI=</HashCode>
+      <FileName>IO\Data\LevelDB\Slice.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Struct>
+  <Enum Name="Bhp.IO.Data.LevelDB.CompressionType">
+    <Position X="48.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAQAAAAAAAAAAEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IO\Data\LevelDB\Native.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Microsoft YaHei UI" Size="9" />
+</ClassDiagram>

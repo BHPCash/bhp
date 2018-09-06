@@ -3,6 +3,7 @@ using Bhp.IO.Caching;
 using Bhp.VM;
 using Bhp.VM.Types;
 using System.Collections;
+using System.Linq;
 using System.Numerics;
 using System.Text;
 
@@ -73,15 +74,15 @@ namespace Bhp.SmartContract
                 case OpCode.NEWARRAY:
                 case OpCode.NEWSTRUCT:
                     {
-                        if (EvaluationStack.Count == 0) return false;
-                        size = (int)EvaluationStack.Peek().GetBigInteger();
+                        if (CurrentContext.EvaluationStack.Count == 0) return false;
+                        size = (int)CurrentContext.EvaluationStack.Peek().GetBigInteger();
                     }
                     break;
                 case OpCode.SETITEM:
                     {
-                        if (EvaluationStack.Count < 3) return false;
-                        if (!(EvaluationStack.Peek(2) is Map map)) return true;
-                        StackItem key = EvaluationStack.Peek(1);
+                        if (CurrentContext.EvaluationStack.Count < 3) return false;
+                        if (!(CurrentContext.EvaluationStack.Peek(2) is Map map)) return true;
+                        StackItem key = CurrentContext.EvaluationStack.Peek(1);
                         if (key is ICollection) return false;
                         if (map.ContainsKey(key)) return true;
                         size = map.Count + 1;
@@ -89,8 +90,8 @@ namespace Bhp.SmartContract
                     break;
                 case OpCode.APPEND:
                     {
-                        if (EvaluationStack.Count < 2) return false;
-                        if (!(EvaluationStack.Peek(1) is Array array)) return false;
+                        if (CurrentContext.EvaluationStack.Count < 2) return false;
+                        if (!(CurrentContext.EvaluationStack.Peek(1) is Array array)) return false;
                         size = array.Count + 1;
                     }
                     break;
@@ -127,8 +128,8 @@ namespace Bhp.SmartContract
                     }
                 case OpCode.CAT:
                     {
-                        if (EvaluationStack.Count < 2) return false;
-                        int length = EvaluationStack.Peek(0).GetByteArray().Length + EvaluationStack.Peek(1).GetByteArray().Length;
+                        if (CurrentContext.EvaluationStack.Count < 2) return false;
+                        int length = CurrentContext.EvaluationStack.Peek(0).GetByteArray().Length + CurrentContext.EvaluationStack.Peek(1).GetByteArray().Length;
                         if (length > MaxItemSize) return false;
                         return true;
                     }
@@ -157,12 +158,12 @@ namespace Bhp.SmartContract
             {
                 case OpCode.SHL:
                     {
-                        BigInteger ishift = EvaluationStack.Peek(0).GetBigInteger();
+                        BigInteger ishift = CurrentContext.EvaluationStack.Peek(0).GetBigInteger();
 
                         if ((ishift > Max_SHL_SHR || ishift < Min_SHL_SHR))
                             return false;
 
-                        BigInteger x = EvaluationStack.Peek(1).GetBigInteger();
+                        BigInteger x = CurrentContext.EvaluationStack.Peek(1).GetBigInteger();
 
                         if (!CheckBigInteger(x << (int)ishift))
                             return false;
@@ -171,12 +172,12 @@ namespace Bhp.SmartContract
                     }
                 case OpCode.SHR:
                     {
-                        BigInteger ishift = EvaluationStack.Peek(0).GetBigInteger();
+                        BigInteger ishift = CurrentContext.EvaluationStack.Peek(0).GetBigInteger();
 
                         if ((ishift > Max_SHL_SHR || ishift < Min_SHL_SHR))
                             return false;
 
-                        BigInteger x = EvaluationStack.Peek(1).GetBigInteger();
+                        BigInteger x = CurrentContext.EvaluationStack.Peek(1).GetBigInteger();
 
                         if (!CheckBigInteger(x >> (int)ishift))
                             return false;
@@ -185,7 +186,7 @@ namespace Bhp.SmartContract
                     }
                 case OpCode.INC:
                     {
-                        BigInteger x = EvaluationStack.Peek().GetBigInteger();
+                        BigInteger x = CurrentContext.EvaluationStack.Peek().GetBigInteger();
 
                         if (!CheckBigInteger(x) || !CheckBigInteger(x + 1))
                             return false;
@@ -194,7 +195,7 @@ namespace Bhp.SmartContract
                     }
                 case OpCode.DEC:
                     {
-                        BigInteger x = EvaluationStack.Peek().GetBigInteger();
+                        BigInteger x = CurrentContext.EvaluationStack.Peek().GetBigInteger();
 
                         if (!CheckBigInteger(x) || (x.Sign <= 0 && !CheckBigInteger(x - 1)))
                             return false;
@@ -203,8 +204,8 @@ namespace Bhp.SmartContract
                     }
                 case OpCode.ADD:
                     {
-                        BigInteger x2 = EvaluationStack.Peek().GetBigInteger();
-                        BigInteger x1 = EvaluationStack.Peek(1).GetBigInteger();
+                        BigInteger x2 = CurrentContext.EvaluationStack.Peek().GetBigInteger();
+                        BigInteger x1 = CurrentContext.EvaluationStack.Peek(1).GetBigInteger();
 
                         if (!CheckBigInteger(x2) || !CheckBigInteger(x1) || !CheckBigInteger(x1 + x2))
                             return false;
@@ -213,8 +214,8 @@ namespace Bhp.SmartContract
                     }
                 case OpCode.SUB:
                     {
-                        BigInteger x2 = EvaluationStack.Peek().GetBigInteger();
-                        BigInteger x1 = EvaluationStack.Peek(1).GetBigInteger();
+                        BigInteger x2 = CurrentContext.EvaluationStack.Peek().GetBigInteger();
+                        BigInteger x1 = CurrentContext.EvaluationStack.Peek(1).GetBigInteger();
 
                         if (!CheckBigInteger(x2) || !CheckBigInteger(x1) || !CheckBigInteger(x1 - x2))
                             return false;
@@ -223,8 +224,8 @@ namespace Bhp.SmartContract
                     }
                 case OpCode.MUL:
                     {
-                        BigInteger x2 = EvaluationStack.Peek().GetBigInteger();
-                        BigInteger x1 = EvaluationStack.Peek(1).GetBigInteger();
+                        BigInteger x2 = CurrentContext.EvaluationStack.Peek().GetBigInteger();
+                        BigInteger x1 = CurrentContext.EvaluationStack.Peek(1).GetBigInteger();
 
                         int lx1 = x1 == null ? 0 : x1.ToByteArray().Length;
 
@@ -240,8 +241,8 @@ namespace Bhp.SmartContract
                     }
                 case OpCode.DIV:
                     {
-                        BigInteger x2 = EvaluationStack.Peek().GetBigInteger();
-                        BigInteger x1 = EvaluationStack.Peek(1).GetBigInteger();
+                        BigInteger x2 = CurrentContext.EvaluationStack.Peek().GetBigInteger();
+                        BigInteger x1 = CurrentContext.EvaluationStack.Peek(1).GetBigInteger();
 
                         if (!CheckBigInteger(x2) || !CheckBigInteger(x1))
                             return false;
@@ -250,8 +251,8 @@ namespace Bhp.SmartContract
                     }
                 case OpCode.MOD:
                     {
-                        BigInteger x2 = EvaluationStack.Peek().GetBigInteger();
-                        BigInteger x1 = EvaluationStack.Peek(1).GetBigInteger();
+                        BigInteger x2 = CurrentContext.EvaluationStack.Peek().GetBigInteger();
+                        BigInteger x1 = CurrentContext.EvaluationStack.Peek(1).GetBigInteger();
 
                         if (!CheckBigInteger(x2) || !CheckBigInteger(x1))
                             return false;
@@ -279,7 +280,7 @@ namespace Bhp.SmartContract
                         size = 1;
                         break;
                     case OpCode.UNPACK:
-                        StackItem item = EvaluationStack.Peek();
+                        StackItem item = CurrentContext.EvaluationStack.Peek();
                         if (item is Array array)
                             size = array.Count;
                         else
@@ -287,7 +288,7 @@ namespace Bhp.SmartContract
                         break;
                 }
             if (size == 0) return true;
-            size += EvaluationStack.Count + AltStack.Count;
+            size += InvocationStack.Sum(p => p.EvaluationStack.Count + p.AltStack.Count);
             if (size > MaxStackSize) return false;
             return true;
         }
@@ -370,8 +371,14 @@ namespace Bhp.SmartContract
                     return 100;
                 case OpCode.CHECKMULTISIG:
                     {
-                        if (EvaluationStack.Count == 0) return 1;
-                        int n = (int)EvaluationStack.Peek().GetBigInteger();
+                        if (CurrentContext.EvaluationStack.Count == 0) return 1;
+                        //int n = (int)CurrentContext.EvaluationStack.Peek().GetBigInteger();
+
+                        var item = CurrentContext.EvaluationStack.Peek();
+                        int n;
+                        if (item is Array array) n = array.Count;
+                        else n = (int)item.GetBigInteger();
+
                         if (n < 1) return 1;
                         return 100 * n;
                     }
@@ -389,53 +396,46 @@ namespace Bhp.SmartContract
             string api_name = Encoding.ASCII.GetString(CurrentContext.Script, CurrentContext.InstructionPointer + 2, length);
             switch (api_name)
             {
-                case "Bhp.Runtime.CheckWitness":
-                case "BHPCs.Runtime.CheckWitness":
+                case "System.Runtime.CheckWitness":
+                case "Bhp.Runtime.CheckWitness":               
                     return 200;
-                case "Bhp.Blockchain.GetHeader":
-                case "BHPCs.Blockchain.GetHeader":
+                case "System.Blockchain.GetHeader":
+                case "Bhp.Blockchain.GetHeader":             
                     return 100;
-                case "Bhp.Blockchain.GetBlock":
-                case "BHPCs.Blockchain.GetBlock":
+                case "System.Blockchain.GetBlock":
+                case "Bhp.Blockchain.GetBlock":               
                     return 200;
-                case "Bhp.Blockchain.GetTransaction":
-                case "BHPCs.Blockchain.GetTransaction":
+                case "System.Blockchain.GetTransaction":
+                case "Bhp.Blockchain.GetTransaction":             
                     return 100;
-                case "Bhp.Blockchain.GetAccount":
-                case "BHPCs.Blockchain.GetAccount":
+                case "System.Blockchain.GetTransactionHeight":
+                case "Bhp.Blockchain.GetTransactionHeight":
                     return 100;
-                case "Bhp.Blockchain.GetValidators":
-                case "BHPCs.Blockchain.GetValidators":
+                case "Bhp.Blockchain.GetAccount":        
+                    return 100;
+                case "Bhp.Blockchain.GetValidators":            
                     return 200;
-                case "Bhp.Blockchain.GetAsset":
-                case "BHPCs.Blockchain.GetAsset":
+                case "Bhp.Blockchain.GetAsset":            
                     return 100;
-                case "Bhp.Blockchain.GetContract":
-                case "BHPCs.Blockchain.GetContract":
+                case "System.Blockchain.GetContract":
+                case "Bhp.Blockchain.GetContract":            
                     return 100;
-                case "Bhp.Transaction.GetReferences":
-                case "BHPCs.Transaction.GetReferences":
+                case "Bhp.Transaction.GetReferences":           
                 case "Bhp.Transaction.GetUnspentCoins":
                     return 200;
-                case "Bhp.Account.SetVotes":
-                case "BHPCs.Account.SetVotes":
+                case "Bhp.Account.SetVotes":         
                     return 1000;
-                case "Bhp.Validator.Register":
-                case "BHPCs.Validator.Register":
+                case "Bhp.Validator.Register":         
                     return 1000L * 100000000L / ratio;
-                case "Bhp.Asset.Create":
-                case "BHPCs.Asset.Create":
+                case "Bhp.Asset.Create":         
                     return 5000L * 100000000L / ratio;
-                case "Bhp.Asset.Renew":
-                case "BHPCs.Asset.Renew":
-                    return (byte)EvaluationStack.Peek(1).GetBigInteger() * 5000L * 100000000L / ratio;
+                case "Bhp.Asset.Renew":          
+                    return (byte)CurrentContext.EvaluationStack.Peek(1).GetBigInteger() * 5000L * 100000000L / ratio;
                 case "Bhp.Contract.Create":
-                case "Bhp.Contract.Migrate":
-                case "BHPCs.Contract.Create":
-                case "BHPCs.Contract.Migrate":
+                case "Bhp.Contract.Migrate":          
                     long fee = 100L;
 
-                    ContractPropertyState contract_properties = (ContractPropertyState)(byte)EvaluationStack.Peek(3).GetBigInteger();
+                    ContractPropertyState contract_properties = (ContractPropertyState)(byte)CurrentContext.EvaluationStack.Peek(3).GetBigInteger();
 
                     if (contract_properties.HasFlag(ContractPropertyState.HasStorage))
                     {
@@ -446,14 +446,14 @@ namespace Bhp.SmartContract
                         fee += 500L;
                     }
                     return fee * 100000000L / ratio;
-                case "Bhp.Storage.Get":
-                case "BHPCs.Storage.Get":
+                case "System.Storage.Get":
+                case "Bhp.Storage.Get":       
                     return 100;
-                case "Bhp.Storage.Put":
-                case "BHPCs.Storage.Put":
-                    return ((EvaluationStack.Peek(1).GetByteArray().Length + EvaluationStack.Peek(2).GetByteArray().Length - 1) / 1024 + 1) * 1000;
-                case "Bhp.Storage.Delete":
-                case "BHPCs.Storage.Delete":
+                case "System.Storage.Put":
+                case "Bhp.Storage.Put":         
+                    return ((CurrentContext.EvaluationStack.Peek(1).GetByteArray().Length + CurrentContext.EvaluationStack.Peek(2).GetByteArray().Length - 1) / 1024 + 1) * 1000;
+                case "System.Storage.Delete":
+                case "Bhp.Storage.Delete":             
                     return 100;
                 default:
                     return 1;
@@ -487,7 +487,7 @@ namespace Bhp.SmartContract
             using (StateMachine service = new StateMachine(persisting_block, accounts, assets, contracts, storages))
             {
                 ApplicationEngine engine = new ApplicationEngine(TriggerType.Application, container, script_table, service, Fixed8.Zero, true);
-                engine.LoadScript(script, false);
+                engine.LoadScript(script);
                 engine.Execute();
                 return engine;
             }

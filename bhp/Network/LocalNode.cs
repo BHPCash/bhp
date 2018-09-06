@@ -19,6 +19,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using Bhp.Log;
 
 namespace Bhp.Network
 {
@@ -33,7 +34,9 @@ namespace Bhp.Network
         private const int UnconnectedMax = 1000;
         public const int MemoryPoolSize = 50000;
         internal static readonly TimeSpan HashesExpiration = TimeSpan.FromSeconds(30);
+        private DateTime LastBlockReceived = DateTime.UtcNow;
 
+        private static readonly ReaderWriterLockSlim MemPoolReadWriteLock = new ReaderWriterLockSlim(LockRecursionPolicy.SupportsRecursion);
         private static readonly Dictionary<UInt256, Transaction> mem_pool = new Dictionary<UInt256, Transaction>();
         private readonly HashSet<Transaction> temp_pool = new HashSet<Transaction>();
         internal static readonly Dictionary<UInt256, DateTime> KnownHashes = new Dictionary<UInt256, DateTime>();
@@ -83,7 +86,7 @@ namespace Bhp.Network
                     Name = "LocalNode.AddTransactionLoop"
                 };
             }
-            this.UserAgent = string.Format("/Bhp:{0}/", GetType().GetTypeInfo().Assembly.GetName().Version.ToString(3));
+            this.UserAgent = string.Format("/BHPC:{0}/", Assembly.GetExecutingAssembly().GetVersion());
             Blockchain.PersistCompleted += Blockchain_PersistCompleted;
         }
 
@@ -118,13 +121,18 @@ namespace Bhp.Network
             if (Blockchain.Default == null) return false;
             lock (Blockchain.Default.PersistLock)
             {
-                lock (mem_pool)
+                MemPoolReadWriteLock.EnterWriteLock();
+                try
                 {
                     if (mem_pool.ContainsKey(tx.Hash)) return false;
                     if (Blockchain.Default.ContainsTransaction(tx.Hash)) return false;
                     if (!tx.Verify(mem_pool.Values)) return false;
-                        mem_pool.Add(tx.Hash, tx);
+                    mem_pool.Add(tx.Hash, tx);
                     CheckMemPool();
+                }
+                finally
+                {
+                    MemPoolReadWriteLock.ExitWriteLock();
                 }
             }
             return true;
@@ -135,6 +143,7 @@ namespace Bhp.Network
             while (!cancellationTokenSource.IsCancellationRequested)
             {
                 new_tx_event.WaitOne();
+
                 Transaction[] transactions;
                 lock (temp_pool)
                 {
@@ -145,7 +154,8 @@ namespace Bhp.Network
                 ConcurrentBag<Transaction> verified = new ConcurrentBag<Transaction>();
                 lock (Blockchain.Default.PersistLock)
                 {
-                    lock (mem_pool)
+                    MemPoolReadWriteLock.EnterWriteLock();
+                    try
                     {
                         transactions = transactions.Where(p => !mem_pool.ContainsKey(p.Hash) && !Blockchain.Default.ContainsTransaction(p.Hash)).ToArray();
 
@@ -184,6 +194,10 @@ namespace Bhp.Network
 
                         CheckMemPool();
                     }
+                    finally
+                    {
+                        MemPoolReadWriteLock.ExitWriteLock();
+                    }
                 }
                 RelayDirectly(verified);
                 if (InventoryReceived != null)
@@ -204,22 +218,54 @@ namespace Bhp.Network
         private void Blockchain_PersistCompleted(object sender, Block block)
         {
             Transaction[] remain;
-            lock (mem_pool)
+            var millisSinceLastBlock = TimeSpan.FromTicks(DateTimeOffset.UtcNow.Ticks)
+                .Subtract(TimeSpan.FromTicks(LastBlockReceived.Ticks)).TotalMilliseconds;
+
+            MemPoolReadWriteLock.EnterWriteLock();
+            try
             {
+                // Remove the transactions that made it into the block
                 foreach (Transaction tx in block.Transactions)
-                {
                     mem_pool.Remove(tx.Hash);
-                }
                 if (mem_pool.Count == 0) return;
 
                 remain = mem_pool.Values.ToArray();
                 mem_pool.Clear();
+
+                if (millisSinceLastBlock > 10000)
+                {
+                    ConcurrentBag<Transaction> verified = new ConcurrentBag<Transaction>();
+                    // Reverify the remaining transactions in the mem_pool
+                    remain.AsParallel().ForAll(tx =>
+                    {
+                        if (tx.Verify(remain))
+                            verified.Add(tx);
+                    });
+
+                    // Note, when running 
+                    foreach (Transaction tx in verified)
+                        mem_pool.Add(tx.Hash, tx);
+                }
             }
+            finally
+            {
+                MemPoolReadWriteLock.ExitWriteLock();
+            }
+            LastBlockReceived = DateTime.UtcNow;
+
             lock (temp_pool)
             {
-                temp_pool.UnionWith(remain);
+                if (millisSinceLastBlock > 10000)
+                {
+                    if (temp_pool.Count > 0)
+                        new_tx_event.Set();
+                }
+                else
+                {
+                    temp_pool.UnionWith(remain);
+                    new_tx_event.Set();
+                }
             }
-            new_tx_event.Set();
         }
 
         private static bool CheckKnownHashes(UInt256 hash)
@@ -249,6 +295,7 @@ namespace Bhp.Network
 
             UInt256[] hashes = mem_pool.Values.AsParallel()
                 .OrderBy(p => p.NetworkFee / p.Size)
+                .ThenBy(p => p.NetworkFee)
                 .ThenBy(p => new BigInteger(p.Hash.ToArray()))
                 .Take(mem_pool.Count - MemoryPoolSize)
                 .Select(p => p.Hash)
@@ -292,7 +339,7 @@ namespace Bhp.Network
 
         public async Task ConnectToPeerAsync(IPEndPoint remoteEndpoint)
         {
-            if (remoteEndpoint.Port == Port && LocalAddresses.Contains(remoteEndpoint.Address)) return;
+            if (remoteEndpoint.Port == Port && LocalAddresses.Contains(remoteEndpoint.Address.MapToIPv6())) return;
             lock (unconnectedPeers)
             {
                 unconnectedPeers.Remove(remoteEndpoint);
@@ -439,9 +486,14 @@ namespace Bhp.Network
 
         public static bool ContainsTransaction(UInt256 hash)
         {
-            lock (mem_pool)
+            MemPoolReadWriteLock.EnterReadLock();
+            try
             {
                 return mem_pool.ContainsKey(hash);
+            }
+            finally
+            {
+                MemPoolReadWriteLock.ExitReadLock();
             }
         }
 
@@ -455,7 +507,7 @@ namespace Bhp.Network
                     // Ensure any outstanding calls to Blockchain_PersistCompleted are not in progress
                     lock (Blockchain.Default.PersistLock)
                     {
-                        Blockchain.PersistCompleted -= Blockchain_PersistCompleted;                        
+                        Blockchain.PersistCompleted -= Blockchain_PersistCompleted;
                     }
 
                     if (listener != null) listener.Stop();
@@ -480,17 +532,23 @@ namespace Bhp.Network
                     new_tx_event.Set();
                     if (poolThread?.ThreadState.HasFlag(ThreadState.Unstarted) == false)
                         poolThread.Join();
-                                        
+
                     new_tx_event.Dispose();
                 }
+                MemPoolReadWriteLock.Dispose();
             }
         }
 
         public static Transaction[] GetMemoryPool()
         {
-            lock (mem_pool)
+            MemPoolReadWriteLock.EnterReadLock();
+            try
             {
                 return mem_pool.Values.ToArray();
+            }
+            finally
+            {
+                MemPoolReadWriteLock.ExitReadLock();
             }
         }
 
@@ -504,11 +562,16 @@ namespace Bhp.Network
 
         public static Transaction GetTransaction(UInt256 hash)
         {
-            lock (mem_pool)
+            MemPoolReadWriteLock.EnterReadLock();
+            try
             {
                 if (!mem_pool.TryGetValue(hash, out Transaction tx))
                     return null;
                 return tx;
+            }
+            finally
+            {
+                MemPoolReadWriteLock.ExitReadLock();
             }
         }
 
@@ -550,6 +613,7 @@ namespace Bhp.Network
 
         private void OnConnected(RemoteNode remoteNode)
         {
+            BhpLog.WriteLine($"LocalNode accept RemoteNode: {remoteNode.RemoteEndpoint.ToString()}");
             lock (connectedPeers)
             {
                 connectedPeers.Add(remoteNode);
@@ -728,11 +792,11 @@ namespace Bhp.Network
                     {
                         try
                         {
-                            LocalAddresses.Add(await UPnP.GetExternalIPAsync());
+                            LocalAddresses.Add((await UPnP.GetExternalIPAsync()).MapToIPv6());
                             if (port > 0)
-                                await UPnP.ForwardPortAsync(port, ProtocolType.Tcp, "Bhp");
+                                await UPnP.ForwardPortAsync(port, ProtocolType.Tcp, "BHP");
                             if (ws_port > 0)
-                                await UPnP.ForwardPortAsync(ws_port, ProtocolType.Tcp, "Bhp WebSocket");
+                                await UPnP.ForwardPortAsync(ws_port, ProtocolType.Tcp, "BHP WebSocket");
                         }
                         catch { }
                     }

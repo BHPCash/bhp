@@ -3,12 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26430.15
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "bhp", "bhp\bhp.csproj", "{22176C2A-992E-48B8-9645-0D0AD24336A3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "bhp", "bhp\bhp.csproj", "{8EA57BE0-B922-4538-8C86-9B18A2887144}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "bhp.UnitTests", "bhp.UnitTests\bhp.UnitTests.csproj", "{ACE63992-67DA-4743-AB48-4C3EFDF8C63D}"
-	ProjectSection(ProjectDependencies) = postProject
-		{22176C2A-992E-48B8-9645-0D0AD24336A3} = {22176C2A-992E-48B8-9645-0D0AD24336A3}
-	EndProjectSection
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "bhp.UnitTests", "bhp.UnitTests\bhp.UnitTests.csproj", "{AD199B1B-2FFD-4259-970B-337C05882C1B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "bhp-vm", "..\bhp-vm-2.3.1\src\bhp-vm\bhp-vm.csproj", "{D0C78990-6C2E-4BED-9949-C19294974824}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "bhp-cli", "..\bhp-cli-2.8.0\bhp-cli\bhp-cli.csproj", "{14A9F445-E417-4071-935A-121CB721C4AF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bhp-gui", "..\bhp-gui\bhp-gui\bhp-gui.csproj", "{CFC243F0-F4E3-4754-8E21-8BA17E1C1788}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -16,19 +19,31 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{22176C2A-992E-48B8-9645-0D0AD24336A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{22176C2A-992E-48B8-9645-0D0AD24336A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{22176C2A-992E-48B8-9645-0D0AD24336A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{22176C2A-992E-48B8-9645-0D0AD24336A3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{ACE63992-67DA-4743-AB48-4C3EFDF8C63D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{ACE63992-67DA-4743-AB48-4C3EFDF8C63D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{ACE63992-67DA-4743-AB48-4C3EFDF8C63D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{ACE63992-67DA-4743-AB48-4C3EFDF8C63D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8EA57BE0-B922-4538-8C86-9B18A2887144}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8EA57BE0-B922-4538-8C86-9B18A2887144}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8EA57BE0-B922-4538-8C86-9B18A2887144}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8EA57BE0-B922-4538-8C86-9B18A2887144}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD199B1B-2FFD-4259-970B-337C05882C1B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD199B1B-2FFD-4259-970B-337C05882C1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD199B1B-2FFD-4259-970B-337C05882C1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD199B1B-2FFD-4259-970B-337C05882C1B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0C78990-6C2E-4BED-9949-C19294974824}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0C78990-6C2E-4BED-9949-C19294974824}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0C78990-6C2E-4BED-9949-C19294974824}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0C78990-6C2E-4BED-9949-C19294974824}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14A9F445-E417-4071-935A-121CB721C4AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14A9F445-E417-4071-935A-121CB721C4AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14A9F445-E417-4071-935A-121CB721C4AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14A9F445-E417-4071-935A-121CB721C4AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CFC243F0-F4E3-4754-8E21-8BA17E1C1788}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFC243F0-F4E3-4754-8E21-8BA17E1C1788}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFC243F0-F4E3-4754-8E21-8BA17E1C1788}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFC243F0-F4E3-4754-8E21-8BA17E1C1788}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {CD261629-E506-4E85-8AE7-E220D318B68D}
+		SolutionGuid = {D12056C4-C6F5-488E-89EF-C1B4F562E545}
 	EndGlobalSection
 EndGlobal

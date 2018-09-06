@@ -65,7 +65,7 @@ namespace Bhp.Network.RPC
             json["script"] = script.ToHexString();
             json["state"] = engine.State;
             json["gas_consumed"] = engine.GasConsumed.ToString();
-            json["stack"] = new JArray(engine.EvaluationStack.Select(p => p.ToParameter().ToJson()));
+            json["stack"] = new JArray(engine.ResultStack.Select(p => p.ToParameter().ToJson()));
             return json;
         }
 
@@ -197,6 +197,18 @@ namespace Bhp.Network.RPC
                         ushort index = (ushort)_params[1].AsNumber();
                         return Blockchain.Default.GetUnspent(hash, index)?.ToJson(index);
                     }
+                case "getvalidators":
+                    {
+                        var validators = Blockchain.Default.GetValidators();
+                        return Blockchain.Default.GetEnrollments().Select(p =>
+                        {
+                            JObject validator = new JObject();
+                            validator["publickey"] = p.PublicKey.ToString();
+                            validator["votes"] = p.Votes.ToString();
+                            validator["active"] = validators.Contains(p.PublicKey);
+                            return validator;
+                        }).ToArray();
+                    }
                 case "invoke":
                     {
                         UInt160 script_hash = UInt160.Parse(_params[0].AsString());
@@ -299,6 +311,11 @@ namespace Bhp.Network.RPC
                         json["port"] = LocalNode.Port;
                         json["nonce"] = LocalNode.Nonce;
                         json["useragent"] = LocalNode.UserAgent;
+                        return json;
+                    }
+                case "createwallet":
+                    {
+                        JObject json = new JObject();
                         return json;
                     }
                 default:

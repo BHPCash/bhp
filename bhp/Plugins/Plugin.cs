@@ -18,7 +18,7 @@ namespace Bhp.Plugins
             instances.Add(this);
         }
 
-        public static void LoadPlugins()
+        static Plugin()
         {
             string path = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "Plugins");
             if (!Directory.Exists(path)) return;
@@ -34,6 +34,10 @@ namespace Bhp.Plugins
                     constructor.Invoke(null);
                 }
             }
+        }
+
+        public static void LoadPlugins()
+        {
         }
     }
 }

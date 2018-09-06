@@ -93,7 +93,7 @@ namespace Bhp.Core
         private Dictionary<CultureInfo, string> _names;
         public string GetName(CultureInfo culture = null)
         {
-            if (AssetType == AssetType.GoverningToken) return "Bhp";
+            if (AssetType == AssetType.GoverningToken) return "BHPC";
             if (AssetType == AssetType.UtilityToken) return "BhpGas";
             if (_names == null)
             {

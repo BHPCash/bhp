@@ -2,18 +2,6 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v2.0": {
-      "Bhp.VM/1.0.0": {
-        "type": "package",
-        "dependencies": {
-          "NETStandard.Library": "1.6.0"
-        },
-        "compile": {
-          "lib/netstandard1.6/Bhp.VM.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard1.6/Bhp.VM.dll": {}
-        }
-      },
       "FluentAssertions/4.19.4": {
         "type": "package",
         "dependencies": {
@@ -2369,11 +2357,11 @@
           "lib/netstandard1.3/System.Xml.XPath.XmlDocument.dll": {}
         }
       },
-      "Bhp/1.3.0": {
+      "Bhp/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Bhp.VM": "1.0.0",
+          "Bhp.VM": "0.5.0",
           "Microsoft.AspNetCore.ResponseCompression": "2.0.2",
           "Microsoft.AspNetCore.Server.Kestrel": "2.0.2",
           "Microsoft.AspNetCore.Server.Kestrel.Https": "2.0.2",
@@ -2387,21 +2375,23 @@
         "runtime": {
           "bin/placeholder/Bhp.dll": {}
         }
+      },
+      "Bhp.VM/0.5.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v1.6",
+        "dependencies": {
+          "NETStandard.Library": "1.6.0"
+        },
+        "compile": {
+          "bin/placeholder/Bhp.VM.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Bhp.VM.dll": {}
+        }
       }
     }
   },
   "libraries": {
-    "Bhp.VM/1.0.0": {
-      "sha512": "2dCHe0aawA7Y3XEM4c+l4k5uczliQKg4fhYo65tIfiIVq4P51Fb2v3wJPKH7EZhBpBI2ED/QLxEc3x7Y9WJ5Vg==",
-      "type": "package",
-      "path": "bhp.vm/1.0.0",
-      "files": [
-        "bhp.vm.1.0.0.nupkg.sha512",
-        "bhp.vm.nuspec",
-        "lib/net461/Bhp.VM.dll",
-        "lib/netstandard1.6/Bhp.VM.dll"
-      ]
-    },
     "FluentAssertions/4.19.4": {
       "sha512": "i2o9/YjrJUI0sx1373gj83fsITo7W/aNJ+uciV5Cg7ZUbKhGWbMekx8gTU9AuDtB54mEhMUC9uF16MOzZEp0FQ==",
       "type": "package",
@@ -3368,10 +3358,10 @@
       "path": "microsoft.netcore.platforms/2.0.0",
       "files": [
         "LICENSE.TXT",
-        "Microsoft.NETCore.Platforms.2.0.0.nupkg.sha512",
-        "Microsoft.NETCore.Platforms.nuspec",
         "THIRD-PARTY-NOTICES.TXT",
         "lib/netstandard1.0/_._",
+        "microsoft.netcore.platforms.2.0.0.nupkg.sha512",
+        "microsoft.netcore.platforms.nuspec",
         "runtime.json",
         "useSharedDesignerContext.txt",
         "version.txt"
@@ -7487,15 +7477,20 @@
         "system.xml.xpath.xmldocument.nuspec"
       ]
     },
-    "Bhp/1.3.0": {
+    "Bhp/1.0.0": {
       "type": "project",
       "path": "../bhp/bhp.csproj",
       "msbuildProject": "../bhp/bhp.csproj"
+    },
+    "Bhp.VM/0.5.0": {
+      "type": "project",
+      "path": "../../bhp-vm-2.3.1/src/bhp-vm/bhp-vm.csproj",
+      "msbuildProject": "../../bhp-vm-2.3.1/src/bhp-vm/bhp-vm.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.0": [
-      "Bhp >= 1.3.0",
+      "Bhp >= 1.0.0",
       "FluentAssertions >= 4.19.4",
       "MSTest.TestAdapter >= 1.2.0",
       "MSTest.TestFramework >= 1.2.0",
@@ -7510,11 +7505,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\BHP\\bhp\\bhp.UnitTests\\bhp.UnitTests.csproj",
+      "projectUniqueName": "D:\\BHP\\20180817\\bhp-2.8.0\\bhp.UnitTests\\bhp.UnitTests.csproj",
       "projectName": "Bhp.UnitTests",
-      "projectPath": "D:\\BHP\\bhp\\bhp.UnitTests\\bhp.UnitTests.csproj",
+      "projectPath": "D:\\BHP\\20180817\\bhp-2.8.0\\bhp.UnitTests\\bhp.UnitTests.csproj",
       "packagesPath": "C:\\Users\\MY-BHPC\\.nuget\\packages\\",
-      "outputPath": "D:\\BHP\\bhp\\bhp.UnitTests\\obj\\",
+      "outputPath": "D:\\BHP\\20180817\\bhp-2.8.0\\bhp.UnitTests\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -7533,8 +7528,8 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "D:\\BHP\\bhp\\bhp\\bhp.csproj": {
-              "projectPath": "D:\\BHP\\bhp\\bhp\\bhp.csproj"
+            "D:\\BHP\\20180817\\bhp-2.8.0\\bhp\\bhp.csproj": {
+              "projectPath": "D:\\BHP\\20180817\\bhp-2.8.0\\bhp\\bhp.csproj"
             }
           }
         }

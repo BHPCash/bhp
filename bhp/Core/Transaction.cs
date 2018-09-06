@@ -3,7 +3,6 @@ using Bhp.IO;
 using Bhp.IO.Caching;
 using Bhp.IO.Json;
 using Bhp.Network;
-using Bhp.SmartContract;
 using Bhp.VM;
 using System;
 using System.Collections.Generic;
@@ -325,7 +324,12 @@ namespace Bhp.Core
         }
 
         /// <summary>
-        /// 验证交易
+        /// 验证内存池中的交易
+        /// <para>Verifying transactions in the memory pool</para>
+        /// <para>1、判断交易中的多个输入是否被双花
+        /// 2、判断交易中的输入在内存池中是否已经被花费
+        /// 3、判断交易中的输入在区块链中是否双花
+        /// </para>
         /// </summary>
         /// <returns>返回验证的结果</returns>
         public virtual bool Verify(IEnumerable<Transaction> mempool)
@@ -338,6 +342,7 @@ namespace Bhp.Core
                 return false;
             if (Blockchain.Default.IsDoubleSpend(this))
                 return false;
+
             foreach (var group in Outputs.GroupBy(p => p.AssetId))
             {
                 AssetState asset = Blockchain.Default.GetAssetState(group.Key);
@@ -375,33 +380,7 @@ namespace Bhp.Core
             }
             if (Attributes.Count(p => p.Usage == TransactionAttributeUsage.ECDH02 || p.Usage == TransactionAttributeUsage.ECDH03) > 1)
                 return false;
-            if (!VerifyReceivingScripts()) return false;
             return this.VerifyScripts();
-        }
-
-        private bool VerifyReceivingScripts()
-        {
-            foreach (UInt160 hash in Outputs.Select(p => p.ScriptHash).Distinct())
-            {
-                ContractState contract = Blockchain.Default.GetContract(hash);
-                if (contract == null) continue;
-                if (!contract.Payable) return false;
-                using (StateReader service = new StateReader())
-                {
-                    ApplicationEngine engine = new ApplicationEngine(TriggerType.VerificationR, this, Blockchain.Default, service, Fixed8.Zero);
-                    engine.LoadScript(contract.Script, false);
-                    using (ScriptBuilder sb = new ScriptBuilder())
-                    {
-                        sb.EmitPush(0);
-                        sb.Emit(OpCode.PACK);
-                        sb.EmitPush("receiving");
-                        engine.LoadScript(sb.ToArray(), false);
-                    }
-                    if (!engine.Execute()) return false;
-                    if (engine.EvaluationStack.Count != 1 || !engine.EvaluationStack.Pop().GetBoolean()) return false;
-                }
-            }
-            return true;
         }
     }
 }

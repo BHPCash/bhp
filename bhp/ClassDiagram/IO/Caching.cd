@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Comment CommentText="Caching">
+    <Position X="10.74" Y="0.646" Height="0.375" Width="0.867" />
+  </Comment>
+  <Class Name="Bhp.IO.Caching.Cache&lt;TKey, TValue&gt;">
+    <Position X="5.5" Y="2" Width="3.5" />
+    <NestedTypes>
+      <Class Name="Bhp.IO.Caching.Cache&lt;TKey, TValue&gt;.CacheItem" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>IO\Caching\Cache.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAIAAQAAACAAIBCQCAAAFAQAAIAAAAAEBAABAABUIAA=</HashCode>
+      <FileName>IO\Caching\Cache.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Object" Collapsed="true">
+    <Position X="12.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Bhp.IO.Caching.FIFOCache&lt;TKey, TValue&gt;">
+    <Position X="4.25" Y="8.75" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IO\Caching\FIFOCache.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bhp.IO.Caching.LRUCache&lt;TKey, TValue&gt;">
+    <Position X="8" Y="8.75" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IO\Caching\LRUCache.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bhp.IO.Caching.RelayCache">
+    <Position X="4" Y="10.75" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IO\Caching\RelayCache.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bhp.IO.Caching.CloneCache&lt;TKey, TValue&gt;">
+    <Position X="16.75" Y="7.75" Width="5.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAGAAAAAAACAAAAAggIAAAABAAAAAAAAAA=</HashCode>
+      <FileName>IO\Caching\CloneCache.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bhp.IO.Caching.DataCache&lt;TKey, TValue&gt;">
+    <Position X="16.75" Y="2" Width="5.25" />
+    <NestedTypes>
+      <Class Name="Bhp.IO.Caching.DataCache&lt;TKey, TValue&gt;.Trackable" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>IO\Caching\DataCache.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAIAAEAAAAAGQAAACAIAAAgkAgkMAAAABAABAAAAAAA=</HashCode>
+      <FileName>IO\Caching\DataCache.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bhp.IO.Caching.MetaDataCache&lt;T&gt;">
+    <Position X="12.25" Y="2" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAABAAAAAAAAkAAgAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>IO\Caching\MetaDataCache.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bhp.IO.Data.LevelDB.DbMetaDataCache&lt;T&gt;">
+    <Position X="11.5" Y="5.25" Width="4.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAQAAAAAAAAAAAAAAgAAgAAAAAAAAAAAAA=</HashCode>
+      <FileName>IO\Data\LevelDB\DbMetaDataCache.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bhp.IO.Caching.ReflectionCache&lt;T&gt;">
+    <Position X="9.5" Y="16.75" Width="4" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IO\Caching\ReflectionCache.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Collections.Generic.Dictionary&lt;TKey, TValue&gt;">
+    <Position X="8.5" Y="10.75" Width="6" />
+    <NestedTypes>
+      <Class Name="System.Collections.Generic.Dictionary&lt;TKey, TValue&gt;.Enumerator" Collapsed="true">
+        <TypeIdentifier />
+        <Lollipop Position="0.2" />
+      </Class>
+      <Class Name="System.Collections.Generic.Dictionary&lt;TKey, TValue&gt;.KeyCollection" Collapsed="true">
+        <TypeIdentifier />
+        <Lollipop Position="0.2" />
+      </Class>
+      <Class Name="System.Collections.Generic.Dictionary&lt;TKey, TValue&gt;.ValueCollection" Collapsed="true">
+        <TypeIdentifier />
+        <Lollipop Position="0.2" />
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier />
+    <Lollipop Position="3.137" />
+  </Class>
+  <Enum Name="Bhp.IO.Caching.TrackState" Collapsed="true">
+    <Position X="23" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAABAAAEEAAAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>IO\Caching\TrackState.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Microsoft YaHei UI" Size="9" />
+</ClassDiagram>

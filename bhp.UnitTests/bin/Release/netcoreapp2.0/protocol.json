@@ -1,24 +1,19 @@
 ﻿{
   "ProtocolConfiguration": {
-    "Magic": 8928791,
+    "Magic": 15835875,
     "AddressVersion": 23,
-    "MaxTransactionsPerBlock": 500,
     "SecondsPerBlock": 15,
     "StandbyValidators": [
-      "xxx",
-      "xxx",
-      "xxx",
-      "xxx",
-      "xxx",
-      "xxx",
-      "xxx"
+      "02e3cb25f380ae0a7e5c7a7d2fdf9f2a01bdb97d71aaa8aff640531a899558f835",
+      "0268c25c3d6a8ecb510ec87bd89cf7b6987f676b2ffb10cde0fe0595e568bdff93",
+      "03831d4f20f014af1dc23d4af738b58f4e7476a4cef3d9a6870fdd257302fcb4d1",
+    	"0267e96868891c9f8b3394f45a4057327cf5c64ab317e6c844e052cf0add5c5c34"
     ],
     "SeedList": [
-      "seed1.bhpcash.io:30556",
-      "seed2.bhpcash.io:30556",
-      "seed3.bhpcash.io:30556",
-      "seed4.bhpcash.io:30556",
-      "seed5.bhpcash.io:30556"
+      "192.168.1.58:10557",
+      "192.168.1.58:20557",
+      "192.168.1.58:30557",
+      "192.168.1.58:40557"
     ],
     "SystemFee": {
       "EnrollmentTransaction": 1000,
